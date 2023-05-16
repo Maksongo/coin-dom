@@ -1,3 +1,5 @@
+const bitcoinPrice = document.querySelector(".bitcoin_price");
+
 const getBitcoinPrice = async () => {
   const base = "https://api.coingecko.com/api/v3/simple/price";
   const query = `?ids=bitcoin&vs_currencies=usd`;
@@ -10,8 +12,16 @@ const getBitcoinPrice = async () => {
 
 getBitcoinPrice()
   .then((data) => {
-    console.log(data.bitcoin.usd);
+    updateUI(data);
   })
   .catch((err) => console.log(err));
 
-  
+
+
+const updateUI = (data) => {
+
+//  console.log(data.bitcoin.usd)
+
+  bitcoinPrice.innerHTML = `
+  <p class="bitcoin_price" >$ ${data.bitcoin.usd}</p>`
+};

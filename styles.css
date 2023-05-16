@@ -54,3 +54,6 @@ nav ul li a {
   justify-content: space-evenly;
 }
 
+.bitcoin_price {
+  font-weight: bold;
+}
