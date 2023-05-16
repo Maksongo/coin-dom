@@ -5,8 +5,13 @@ const getBitcoinPrice = async () => {
   const response = await fetch(base + query);
 
   const data = await response.json();
-  console.log(data);
-  return data[0];
+  return data;
 };
 
-getBitcoinPrice();
+getBitcoinPrice()
+  .then((data) => {
+    console.log(data.bitcoin.usd);
+  })
+  .catch((err) => console.log(err));
+
+  
