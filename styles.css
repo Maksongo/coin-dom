@@ -29,13 +29,27 @@ nav ul li a {
   color: black;
 }
 
-/* .welcome_box{
-display: flex;
-flex-flow: row wrap;
-} */
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
+.welcome_box {
+  margin-top: 160px;
+}
 
-.welcome_box_textpart_one, .welcome_box_textpart_two, .welcome_box_coinspart {
-    display: flex;
-    justify-content: center;
-  }
+.welcome_box_textpart_one,
+.welcome_box_textpart_two {
+  display: flex;
+  justify-content: center;
+}
+
+.welcome_box h1 {
+  font-size: 100px;
+}
+
+.welcome_box_coinsPart {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
+}
