@@ -36,7 +36,7 @@ nav ul li a {
 
 .welcome_box {
   margin-top: 160px;
-  height: 600px;
+  height: 740px;
 }
 
 .welcome_box_textpart_one,
@@ -63,11 +63,13 @@ nav ul li a {
   border-collapse: collapse;
   margin: 25px 0;
   width: 1200px;
+  border-radius: 5px 5px 0 0;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
 }
 
 .content-table thead tr {
   background-color: #d400ff;
-  text-align: left;
   font-weight: bold;
 }
 
