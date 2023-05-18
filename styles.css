@@ -5,7 +5,6 @@
   font-family: "Poppins", sans-serif;
 }
 
-
 header {
   width: 100%;
   padding: 0 15%;
@@ -82,28 +81,27 @@ nav ul li a {
   padding: 30px 15px;
 }
 
-.content-table tbody tr{
+.content-table tbody tr {
   border-bottom: 1px solid #dddddd;
 }
 
-.content-table tbody tr:last-of-type{
+.content-table tbody tr:last-of-type {
   border-bottom: 2px solid #d400ff;
 }
 
-tr:hover{
+tr:hover {
   background-color: #f3f3f3;
 }
 
-.market_box{
+.market_box {
   margin-bottom: 240px;
 }
 
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+}
 
-  .flex-container {
-    display: flex;
-    justify-content: space-around;
-  }
-  
 .flex-items {
   display: flex;
   flex-direction: column;
@@ -111,5 +109,22 @@ tr:hover{
 }
 
 .flex-items div {
-border: 1px solid black;
-  }
+  border: 1px solid black;
+}
+
+.join_us_box{
+margin-top: 140px;
+}
+
+.join_us_textpart_one,
+.join_us_textpart_two,
+.join_us_ptext,
+.join_us_button {
+  display: flex;
+  justify-content: center;
+}
+
+
+.join_us_box h1 {
+  font-size: 100px;
+}
