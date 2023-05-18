@@ -5,10 +5,11 @@
   font-family: "Poppins", sans-serif;
 }
 
+
 header {
   width: 100%;
   padding: 0 15%;
-  background: #d400ff;
+  background: #8e00aa;
   /* position: fixed; */
 }
 
@@ -35,7 +36,7 @@ nav ul li a {
 }
 
 .welcome_box {
-  margin-top: 160px;
+  margin-top: 240px;
   height: 740px;
 }
 
@@ -75,17 +76,21 @@ nav ul li a {
 
 .content-table th,
 .content-table td {
-  padding: 12px 15px;
+  padding: 30px 15px;
 }
 
 .content-table tbody tr{
   border-bottom: 1px solid #dddddd;
 }
 
-.content-table tbody tr:nth-of-type(even){
+/* .content-table tbody tr:nth-of-type(even){
   background-color: #f3f3f3;
-}
+} */
 
 .content-table tbody tr:last-of-type{
   border-bottom: 2px solid #d400ff;
+}
+
+tr:hover{
+  background-color: #f3f3f3;
 }
