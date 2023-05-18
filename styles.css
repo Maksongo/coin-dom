@@ -86,10 +86,6 @@ nav ul li a {
   border-bottom: 1px solid #dddddd;
 }
 
-/* .content-table tbody tr:nth-of-type(even){
-  background-color: #f3f3f3;
-} */
-
 .content-table tbody tr:last-of-type{
   border-bottom: 2px solid #d400ff;
 }
@@ -97,7 +93,7 @@ nav ul li a {
 tr:hover{
   background-color: #f3f3f3;
 }
-
+/* 
 .parent {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -116,5 +112,18 @@ tr:hover{
 
   .div1, .div2, .div3, .div4, .div5, .div6, .div7{
     border: 1px solid black;
+
+  } */
+
+
+
+
+  .flex-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .flex-items {
+border: 1px solid black;
 
   }
