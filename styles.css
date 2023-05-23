@@ -5,6 +5,7 @@
   /* font-family: "Poppins", sans-serif; */
 }
 
+
 header {
   width: 100%;
   padding: 0 15%;
@@ -157,7 +158,14 @@ button:active {
 	top:1px;
 }
 
-/* .keka{
+
+/* td div{
   display: flex;
-  align-items: center;
+  justify-content: center;
+  width: 240px;
 } */
+
+.sd{
+width: 240;
+}
+
