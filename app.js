@@ -5,11 +5,24 @@ const WelcomeBNBPrice = document.querySelector(".welcome_bnb_price")
 
 const tokens = ['bitcoin','ethereum','Tether','binancecoin','usd-coin','ripple','cardano','staked-ether','dogecoin','matic-network'];
 
-const getBitcoinPrice = async () => {
-  const base = "https://api.coingecko.com/api/v3/simple/price";
-  const query = `?ids=${tokens}&vs_currencies=usd`;
 
-  const response = await fetch(base + query);
+
+const getBitcoinPrice = async () => {
+
+  // classic fetch
+
+  // const base = "https://api.coingecko.com/api/v3/simple/price";
+  // const query = `?ids=${tokens}&vs_currencies=usd`;
+
+  // const response = await fetch(base + query);
+
+  // const data = await response.json();
+  // console.log(data)
+  // return data;
+
+  // modern fetch
+
+  const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false&price_change_percentage=24h&locale=en')
 
   const data = await response.json();
   console.log(data)
@@ -26,12 +39,17 @@ getBitcoinPrice()
 
 const updateUI = (data) => {
 
-  const { bitcoin, ethereum } = data;
+  // const { bitcoin, ethereum, tether, binancecoin } = data;
+
+  console.log('hello')
 
   WelcomeBitcoinPrice.innerHTML = `
-  <p class="welcome_bitcoin_price" >$ ${bitcoin.usd}</p>`
-
+  <p class="welcome_bitcoin_price" >$ ${data[0].current_price}</p>`
   WelcomeEthPrice.innerHTML = `
-  <p class="welcome_eth_price" >$ ${ethereum.usd}</p>`
+  <p class="welcome_eth_price" >$ ${data[1].current_price}</p>`
+  WelcomeTehPrice.innerHTML = `
+  <p class="welcome_eth_price" >$ ${data[2].current_price}</p>`
+  WelcomeBNBPrice.innerHTML = `
+  <p class="welcome_eth_price" >$ ${data[3].current_price}</p>`
 
 };
