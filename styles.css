@@ -60,6 +60,7 @@ nav ul li a {
   margin-top: 20px;
   display: flex;
   justify-content: space-evenly;
+  text-align: center;
 }
 
 .content-table {

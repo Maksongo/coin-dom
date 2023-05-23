@@ -20,25 +20,25 @@ getBitcoinPrice()
 const updateUI = (data) => {
 
   WelcomeBoxCoinsPart.innerHTML = `
-  <div class="welcome_bitcoin">
+  <div>
   <img src="${data[0].image}}" alt="" \ width="100" height="100" />
-  <p class="welcome_nameAND24h1">${data[0].name} ${data[0].price_change_percentage_24h}</p>
-  <p class="welcome_bitcoin_price" >$ ${data[0].current_price}</p>
+  <p>${data[0].name} <span>${data[0].price_change_percentage_24h}</span></p>
+  <p>$ ${data[0].current_price}</p>
 </div>
-<div class="welcome_eth">
+<div>
 <img src="${data[1].image}}" alt="" \ width="100" height="100" />
-<p class="welcome_nameAND24h1">${data[1].name} ${data[1].price_change_percentage_24h}</p>
-<p class="welcome_bitcoin_price" >$ ${data[1].current_price}</p>
+<p>${data[1].name} <span>${data[1].price_change_percentage_24h}</span></p>
+<p>$ ${data[1].current_price}</p>
 </div>
-<div class="welcome_tehter">
+<div>
 <img src="${data[2].image}}" alt="" \ width="100" height="100" />
-<p class="welcome_nameAND24h1">${data[2].name} ${data[2].price_change_percentage_24h}</p>
-<p class="welcome_bitcoin_price" >$ ${data[2].current_price}</p>
+<p>${data[2].name} <span>${data[2].price_change_percentage_24h}</span></p>
+<p>$ ${data[2].current_price}</p>
 </div>
-<div class="welcome_bnb">
+<div>
 <img src="${data[3].image}}" alt="" \ width="100" height="100" />
-<p class="welcome_nameAND24h1">${data[3].name} ${data[3].price_change_percentage_24h}</p>
-<p class="welcome_bitcoin_price" >$ ${data[3].current_price}</p>
+<p>${data[3].name} <span>${data[3].price_change_percentage_24h}</span></p>
+<p>$ ${data[3].current_price}</p>
 </div>
 </div>
 `
