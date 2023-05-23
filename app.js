@@ -1,3 +1,5 @@
+const tokens = [bitcoin,ethereum,Tether,binancecoin,usd-coin,ripple,cardano,staked-ether,dogecoin,matic-network];
+
 const bitcoinPrice = document.querySelector(".bitcoin_price");
 
 const getBitcoinPrice = async () => {
