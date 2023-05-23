@@ -26,10 +26,12 @@ getBitcoinPrice()
 
 const updateUI = (data) => {
 
+  const { bitcoin, ethereum } = data;
+
   WelcomeBitcoinPrice.innerHTML = `
-  <p class="welcome_bitcoin_price" >$ ${data.bitcoin.usd}</p>`
+  <p class="welcome_bitcoin_price" >$ ${bitcoin.usd}</p>`
 
   WelcomeEthPrice.innerHTML = `
-  <p class="welcome_eth_price" >$ ${data.ethereum.usd}</p>`
+  <p class="welcome_eth_price" >$ ${ethereum.usd}</p>`
 
 };
