@@ -1,15 +1,18 @@
-const tokens = [bitcoin,ethereum,Tether,binancecoin,usd-coin,ripple,cardano,staked-ether,dogecoin,matic-network];
+const WelcomeBitcoinPrice = document.querySelector(".welcome_bitcoin_price");
+const WelcomeEthPrice = document.querySelector(".welcome_eth_price")
+const WelcomeTehPrice = document.querySelector(".welcome_teh_price")
+const WelcomeBNBPrice = document.querySelector(".welcome_bnb_price")
 
-const bitcoinPrice = document.querySelector(".bitcoin_price");
+const tokens = ['bitcoin','ethereum','Tether','binancecoin','usd-coin','ripple','cardano','staked-ether','dogecoin','matic-network'];
 
 const getBitcoinPrice = async () => {
   const base = "https://api.coingecko.com/api/v3/simple/price";
-  const query = `?ids=bitcoin&vs_currencies=usd`;
+  const query = `?ids=${tokens}&vs_currencies=usd`;
 
   const response = await fetch(base + query);
 
   const data = await response.json();
-  console.log(data.bitcoin)
+  console.log(data)
   return data;
 };
 
@@ -23,8 +26,10 @@ getBitcoinPrice()
 
 const updateUI = (data) => {
 
-//  console.log(data.bitcoin.usd)
+  WelcomeBitcoinPrice.innerHTML = `
+  <p class="welcome_bitcoin_price" >$ ${data.bitcoin.usd}</p>`
 
-  bitcoinPrice.innerHTML = `
-  <p class="bitcoin_price" >$ ${data.bitcoin.usd}</p>`
+  WelcomeEthPrice.innerHTML = `
+  <p class="welcome_eth_price" >$ ${data.ethereum.usd}</p>`
+
 };
