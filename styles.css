@@ -125,7 +125,6 @@ margin-bottom: 150px;
   justify-content: center;
 }
 
-
 .join_us_box h1 {
   font-size: 100px;
 }
@@ -157,4 +156,7 @@ button:active {
 	top:1px;
 }
 
-        
+/* .keka{
+  display: flex;
+  align-items: center;
+} */
