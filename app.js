@@ -1,7 +1,9 @@
-const WelcomeBitcoinPrice = document.querySelector(".welcome_bitcoin_price");
+const WelcomeBitcoinPrice = document.querySelector(".welcome_bitcoin");
 const WelcomeEthPrice = document.querySelector(".welcome_eth_price")
 const WelcomeTehPrice = document.querySelector(".welcome_teh_price")
 const WelcomeBNBPrice = document.querySelector(".welcome_bnb_price")
+
+const WelcomeBox = document.querySelector(".welcome_box")
 
 const tokens = ['bitcoin','ethereum','Tether','binancecoin','usd-coin','ripple','cardano','staked-ether','dogecoin','matic-network'];
 
@@ -44,6 +46,8 @@ const updateUI = (data) => {
   console.log('hello')
 
   WelcomeBitcoinPrice.innerHTML = `
+  <img src="${data[0].image}}" alt="" \ width="100" height="100" />
+  <p class="welcome_nameAND24h1">${data[6].name} ${data[0].price_change_percentage_24h}</p>
   <p class="welcome_bitcoin_price" >$ ${data[0].current_price}</p>`
   WelcomeEthPrice.innerHTML = `
   <p class="welcome_eth_price" >$ ${data[1].current_price}</p>`
@@ -53,3 +57,6 @@ const updateUI = (data) => {
   <p class="welcome_eth_price" >$ ${data[3].current_price}</p>`
 
 };
+
+
+//   <span>${data[0].price_change_percentage_24h}</span>
