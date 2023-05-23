@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
 }
 
 header {
@@ -10,6 +10,10 @@ header {
   padding: 0 15%;
   background: #8e00aa;
   /* position: fixed; */
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 nav {
@@ -56,10 +60,6 @@ nav ul li a {
   margin-top: 20px;
   display: flex;
   justify-content: space-evenly;
-}
-
-.bitcoin_price {
-  font-weight: bold;
 }
 
 .content-table {
