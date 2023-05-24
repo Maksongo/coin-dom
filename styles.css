@@ -130,8 +130,27 @@ tr:hover {
   justify-content: space-around;
 }
 
-.flex-items div {
+
+
+.any_choose_box {
+  padding: 25px;
+  margin: 20px auto;
   border: 1px solid black;
+  border-radius: 2.4rem;
+  display: flex;
+  min-height: 160px;
+}
+
+.any_choose_box img{
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+  margin: 0 20px 0 0;
+}
+
+img{
+  max-width:100%;
+         height:auto;
 }
 
 .join_us_box{
