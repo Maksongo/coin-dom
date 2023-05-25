@@ -31,7 +31,7 @@ nav ul li {
 }
 nav ul li a {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 .wrapper {
@@ -119,6 +119,23 @@ tr:hover {
   margin-bottom: 240px;
 }
 
+.market_pages{
+display: flex;
+justify-content: center;
+}
+
+.market_pages button{
+  background-color: #f3f2f4;
+  border: 2px solid #8e00aa;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.1rem;
+  height: 2.8rem;
+  width: 2.8rem;
+  margin: 0 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
 .flex-container {
   display: flex;
   justify-content: space-around;
@@ -176,7 +193,7 @@ footer{
   background: #8e00aa;
 }
 
-button {
+/* button {
 	background-color:#d400ff;
 	border-radius:20px;
 	border:1px solid #8e00aa;
@@ -195,7 +212,7 @@ button:hover {
 button:active {
 	position:relative;
 	top:1px;
-}
+} */
 
 .sd{
 width: 240;
