@@ -100,7 +100,7 @@ nav ul li a {
 
 .content-table th,
 .content-table td {
-  padding: 22px 15px;
+  padding: 25px 15px;
 }
 
 .content-table tbody tr {
@@ -111,24 +111,15 @@ nav ul li a {
   border-bottom: 2px solid #d400ff;
 }
 
-.test{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.test p{
-  margin: 0 0 0 10px;
-}
-
 td:first-child{
   display: flex;
   justify-content: center;
   align-items: center;
   
 }
-/* td p{
-  margin: 0 0 0 10px;
-} */
+td img{
+  margin: 0 10 0 0px;
+}
 
 tr:hover {
   background-color: #f3f3f3;
@@ -212,7 +203,7 @@ footer{
   background: #8e00aa;
 }
 
-/* button {
+.join_us_button button {
 	background-color:#d400ff;
 	border-radius:20px;
 	border:1px solid #8e00aa;
@@ -225,13 +216,13 @@ footer{
 	text-decoration:none;
   margin-top: 15px;
 }
-button:hover {
+.join_us_button button:hover {
 	background-color:#be00e4;
 }
-button:active {
+.join_us_button button:active {
 	position:relative;
 	top:1px;
-} */
+}
 
 .sd{
 width: 240;
