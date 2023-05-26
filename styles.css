@@ -100,16 +100,35 @@ nav ul li a {
 
 .content-table th,
 .content-table td {
-  padding: 30px 15px;
+  padding: 22px 15px;
 }
 
 .content-table tbody tr {
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 2px solid #dddddd;
 }
 
 .content-table tbody tr:last-of-type {
   border-bottom: 2px solid #d400ff;
 }
+
+.test{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.test p{
+  margin: 0 0 0 10px;
+}
+
+td:first-child{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+/* td p{
+  margin: 0 0 0 10px;
+} */
 
 tr:hover {
   background-color: #f3f3f3;
