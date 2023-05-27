@@ -1,22 +1,32 @@
 const WelcomeBoxCoinsPart = document.querySelector(".welcome_box_coinsPart");
 const contentTable = document.querySelector(".content-table");
 
-const getBitcoinPrice = async () => {
+const buttonPageOne = document.querySelector(".button_page_1");
+const buttonPageTwo = document.querySelector(".button_page_2");
+const buttonPageThree = document.querySelector(".button_page_3");
+const buttonPageFour = document.querySelector(".button_page_4");
+const buttonPageFive = document.querySelector(".button_page_5");
 
-  const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false&price_change_percentage=24h&locale=en')
+let currentPage = 1;
+
+let getBitcoinPrice = async () => {
+  const response = await fetch(
+    `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=${currentPage}&sparkline=false&price_change_percentage=24h&locale=en`
+  );
 
   const data = await response.json();
-  console.log(data)
+  console.log(data);
   return data;
 };
 
 getBitcoinPrice()
   .then((data) => {
     updateUI(data);
+    refreshPage(data);
   })
   .catch((err) => console.log(err));
 
-const updateUI = (data) => {
+let updateUI = (data) => {
   WelcomeBoxCoinsPart.innerHTML = `
   <div>
   <img src="${data[0].image}}" alt="" \ width="100" height="100" />
@@ -142,4 +152,66 @@ const updateUI = (data) => {
           <td>тут будет график</td>
           </tr>
         </table>`;
+};
+
+let refreshPage = (data) => {
+  buttonPageOne.addEventListener("click", () => {
+    console.log("you clicked me");
+    currentPage = 1;
+    getBitcoinPrice()
+      .then((data) => {
+        updateUI(data);
+        refreshPage(data);
+      })
+      .catch((err) => console.log(err));
+    updateUI(data);
+  });
+
+  buttonPageTwo.addEventListener("click", () => {
+    console.log("you clicked me");
+    currentPage = 2;
+    getBitcoinPrice()
+      .then((data) => {
+        updateUI(data);
+        refreshPage(data);
+      })
+      .catch((err) => console.log(err));
+    updateUI(data);
+  });
+
+  buttonPageThree.addEventListener("click", () => {
+    console.log("you clicked me");
+    currentPage = 3;
+    getBitcoinPrice()
+      .then((data) => {
+        updateUI(data);
+        refreshPage(data);
+      })
+      .catch((err) => console.log(err));
+    updateUI(data);
+  });
+
+  buttonPageFour.addEventListener("click", () => {
+    console.log("you clicked me");
+    currentPage = 4;
+    getBitcoinPrice()
+      .then((data) => {
+        updateUI(data);
+        refreshPage(data);
+      })
+      .catch((err) => console.log(err));
+    updateUI(data);
+  });
+
+  buttonPageFive.addEventListener("click", () => {
+    console.log("you clicked me");
+    currentPage = 5;
+    getBitcoinPrice()
+      .then((data) => {
+        updateUI(data);
+        refreshPage(data);
+      })
+      .catch((err) => console.log(err));
+    updateUI(data);
+  });
 };
