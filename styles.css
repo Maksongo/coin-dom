@@ -266,3 +266,5 @@ footer{
 	top:1px;
 }
 
+.negative { color : red; }
+.positive { color : #0ecb81; }

@@ -30,22 +30,22 @@ let updateUI = (data) => {
   WelcomeBoxCoinsPart.innerHTML = `
   <div>
   <img src="${data[0].image}}" alt="" \ width="100" height="100" />
-  <p>${data[0].name} <span>${data[0].price_change_percentage_24h}%</span></p>
+  <p>${data[0].name} <span class="welcome_box_any_price_color">${data[0].price_change_percentage_24h}%</span></p>
   <p>$ ${data[0].current_price}</p>
 </div>
 <div>
 <img src="${data[1].image}}" alt="" \ width="100" height="100" />
-<p>${data[1].name} <span>${data[1].price_change_percentage_24h}%</span></p>
+<p>${data[1].name} <span class="welcome_box_any_price_color">${data[1].price_change_percentage_24h}%</span></p>
 <p>$ ${data[1].current_price}</p>
 </div>
 <div>
 <img src="${data[2].image}}" alt="" \ width="100" height="100" />
-<p>${data[2].name} <span>${data[2].price_change_percentage_24h}%</span></p>
+<p>${data[2].name} <span class="welcome_box_any_price_color">${data[2].price_change_percentage_24h}%</span></p>
 <p>$ ${data[2].current_price}</p>
 </div>
 <div>
 <img src="${data[3].image}}" alt="" \ width="100" height="100" />
-<p>${data[3].name} <span>${data[3].price_change_percentage_24h}%</span></p>
+<p>${data[3].name} <span class="welcome_box_any_price_color">${data[3].price_change_percentage_24h}%</span></p>
 <p>$ ${data[3].current_price}</p>
 </div>
 </div>
@@ -94,7 +94,7 @@ let updateUI = (data) => {
             <p>${data[3].name}</p>
           </td>
           <td>${data[3].current_price}</td>
-          <td>${data[3].price_change_percentage_24h} %</td>
+          <td>${data[3].price_change_percentage_24h.toFixed(2)} %</td>
           <td>$ ${data[3].market_cap.toLocaleString('en-EN')}</td>
           </tr>
           <tr>
@@ -152,6 +152,9 @@ let updateUI = (data) => {
           <td>$ ${data[9].market_cap.toLocaleString('en-EN')}</td>
           </tr>
         </table>`;
+
+MakePosNeg();
+WelcomeMakePosNeg();
 };
 
 let refreshPage = (data) => {
@@ -215,3 +218,23 @@ let refreshPage = (data) => {
     updateUI(data);
   });
 };
+
+function MakePosNeg() {
+    var TDs = document.querySelectorAll('td:nth-child(3)');
+    
+    for (var i = 0; i < TDs.length; i++) {
+    var temp = TDs[i];
+    if (temp.firstChild.nodeValue.indexOf('-') == 0) {temp.className = "negative";}
+    else {temp.className = "positive";}
+    }
+    };
+
+ function WelcomeMakePosNeg() {
+    var Num = document.querySelectorAll('.welcome_box_any_price_color');
+    
+    for (var i = 0; i < Num.length; i++) {
+    var temp = Num[i];
+    if (temp.firstChild.nodeValue.indexOf('-') == 0) {temp.className = "negative";}
+    else {temp.className = "positive";}
+    }
+    };
