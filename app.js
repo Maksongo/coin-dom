@@ -68,7 +68,7 @@
 //             </td>
 //             <td>${data[0].current_price}</td>
 //             <td>${data[0].price_change_percentage_24h}</td>
-//             <td>тут будет график</td>
+//             <td>${data[0].market_cap}</td>
 //           </tr>
 //           <tr>
 //           <td>
@@ -77,7 +77,7 @@
 //           </td>
 //           <td>${data[1].current_price}</td>
 //           <td>${data[1].price_change_percentage_24h}</td>
-//           <td>тут будет график</td>
+//           <td>${data[1].market_cap}</td>
 //           </tr>
 //           <tr>
 //           <td>
@@ -86,7 +86,7 @@
 //           </td>
 //           <td>${data[2].current_price}</td>
 //           <td>${data[2].price_change_percentage_24h}</td>
-//           <td>тут будет график</td>
+//           <td>${data[2].market_cap}</td>
 //           </tr>
 //           <tr>
 //           <td>
@@ -95,7 +95,7 @@
 //           </td>
 //           <td>${data[3].current_price}</td>
 //           <td>${data[3].price_change_percentage_24h}</td>
-//           <td>тут будет график</td>
+//           <td>${data[3].market_cap}</td>
 //           </tr>
 //           <tr>
 //           <td>
@@ -104,7 +104,7 @@
 //           </td>
 //           <td>${data[4].current_price}</td>
 //           <td>${data[4].price_change_percentage_24h}</td>
-//           <td>тут будет график</td>
+//           <td>${data[4].market_cap}</td>
 //           </tr>
 //           <tr>
 //           <td>
@@ -113,7 +113,7 @@
 //           </td>
 //           <td>${data[5].current_price}</td>
 //           <td>${data[5].price_change_percentage_24h}</td>
-//           <td>тут будет график</td>
+//           <td>${data[5].market_cap}</td>
 //           </tr>
 //           <tr>
 //           <td>
@@ -122,7 +122,7 @@
 //           </td>
 //           <td>${data[6].current_price}</td>
 //           <td>${data[6].price_change_percentage_24h}</td>
-//           <td>тут будет график</td>
+//           <td>${data[6].market_cap}</td>
 //           </tr>
 //           <tr>
 //           <td>
@@ -131,7 +131,7 @@
 //           </td>
 //           <td>${data[7].current_price}</td>
 //           <td>${data[7].price_change_percentage_24h}</td>
-//           <td>тут будет график</td>
+//           <td>${data[7].market_cap}</td>
 //           </tr>
 //           <tr>
 //           <td>
@@ -140,7 +140,7 @@
 //           </td>
 //           <td>${data[8].current_price}</td>
 //           <td>${data[8].price_change_percentage_24h}</td>
-//           <td>тут будет график</td>
+//           <td>${data[8].market_cap}</td>
 //           </tr>
 //           <tr>
 //           <td>
@@ -149,7 +149,7 @@
 //           </td>
 //           <td>${data[9].current_price}</td>
 //           <td>${data[9].price_change_percentage_24h}</td>
-//           <td>тут будет график</td>
+//           <td>${data[9].market_cap}</td>
 //           </tr>
 //         </table>`;
 // };
