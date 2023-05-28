@@ -149,6 +149,23 @@ td,tr{
   text-align: left;
 }
 
+th:nth-child(1){
+  width: 420px;
+}
+
+th:nth-child(4){
+  width: 300px;
+  text-align: right;
+}
+
+td:nth-child(4){
+text-align: right;
+}
+
+#myChart{
+  width: 240px;
+  height: 80px;
+}
 
 .market_pages{
   display: flex;
@@ -164,7 +181,6 @@ td,tr{
   height: 2.8rem;
   width: 2.8rem;
   margin: 0 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
 .market_box {

@@ -92,7 +92,7 @@
             </td>
             <td>$$$</td>
             <td>-5%</td>
-            <td>тут будет график</td>
+            <td><canvas id="myChart"></canvas></td>
           </tr>
           <tr>
             <td>
@@ -279,6 +279,34 @@
 
     <footer></footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script> 
+
+    let ctx = document.querySelector('#myChart').getContext('2d');
+    let myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: [1,2,3,4,5],
+        datasets: [{
+          label: 'Coin',
+          data: [50,40,25,30,15],
+          backgroundColor: [
+            'white'
+          ],
+          borderColor: [
+          '#00ff80',
+          '#00ff80',
+          '#00ff80',
+          '#00ff80',
+          '#00ff80'
+          ],
+          borderWidth: 1
+        }]
+      },
+      option: {}
+    })
+
+    </script>
     <script src="app.js"></script>
   </body>
 </html>
