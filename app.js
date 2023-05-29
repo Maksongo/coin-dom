@@ -30,23 +30,23 @@ let updateUI = (data) => {
   WelcomeBoxCoinsPart.innerHTML = `
   <div>
   <img src="${data[0].image}}" alt="" \ width="100" height="100" />
-  <p>${data[0].name} <span class="welcome_box_any_price_color">${data[0].price_change_percentage_24h}%</span></p>
-  <p>$ ${data[0].current_price}</p>
+  <p>${data[0].name} <span class="welcome_box_any_price_color">${data[0].price_change_percentage_24h.toFixed(2)}%</span></p>
+  <p>$ ${data[0].current_price.toLocaleString('en-EN')}</p>
 </div>
 <div>
 <img src="${data[1].image}}" alt="" \ width="100" height="100" />
-<p>${data[1].name} <span class="welcome_box_any_price_color">${data[1].price_change_percentage_24h}%</span></p>
-<p>$ ${data[1].current_price}</p>
+<p>${data[1].name} <span class="welcome_box_any_price_color">${data[1].price_change_percentage_24h.toFixed(2)}%</span></p>
+<p>$ ${data[1].current_price.toLocaleString('en-EN')}</p>
 </div>
 <div>
 <img src="${data[2].image}}" alt="" \ width="100" height="100" />
-<p>${data[2].name} <span class="welcome_box_any_price_color">${data[2].price_change_percentage_24h}%</span></p>
-<p>$ ${data[2].current_price}</p>
+<p>${data[2].name} <span class="welcome_box_any_price_color">${data[2].price_change_percentage_24h.toFixed(2)}%</span></p>
+<p>$ ${data[2].current_price.toLocaleString('en-EN')}</p>
 </div>
 <div>
 <img src="${data[3].image}}" alt="" \ width="100" height="100" />
-<p>${data[3].name} <span class="welcome_box_any_price_color">${data[3].price_change_percentage_24h}%</span></p>
-<p>$ ${data[3].current_price}</p>
+<p>${data[3].name} <span class="welcome_box_any_price_color">${data[3].price_change_percentage_24h.toFixed(2)}%</span></p>
+<p>$ ${data[3].current_price.toLocaleString('en-EN')}</p>
 </div>
 </div>
 `;
@@ -66,7 +66,7 @@ let updateUI = (data) => {
             <img src="${data[0].image}" alt="" \ width="42" height="42" />
               <p>${data[0].name}</p>
             </td>
-            <td>${data[0].current_price}</td>
+            <td>${data[0].current_price.toLocaleString('en-EN')}</td>
             <td>${data[0].price_change_percentage_24h.toFixed(2)} %</td>
             <td>$ ${data[0].market_cap.toLocaleString('en-EN')}</td>
           </tr>
@@ -75,7 +75,7 @@ let updateUI = (data) => {
           <img src="${data[1].image}" alt="" \ width="42" height="42" />
             <p>${data[1].name}</p>
           </td>
-          <td>${data[1].current_price}</td>
+          <td>${data[1].current_price.toLocaleString('en-EN')}</td>
           <td>${data[1].price_change_percentage_24h.toFixed(2)} %</td>
           <td>$ ${data[1].market_cap.toLocaleString('en-EN')}</td>
           </tr>
@@ -84,7 +84,7 @@ let updateUI = (data) => {
           <img src="${data[2].image}" alt="" \ width="42" height="42" />
             <p>${data[2].name}</p>
           </td>
-          <td>${data[2].current_price.toFixed(2)}</td>
+          <td>${data[2].current_price.toLocaleString('en-EN')}</td>
           <td>${data[2].price_change_percentage_24h.toFixed(2)} %</td>
           <td>$ ${data[2].market_cap.toLocaleString('en-EN')}</td>
           </tr>
@@ -93,7 +93,7 @@ let updateUI = (data) => {
           <img src="${data[3].image}" alt="" \ width="42" height="42" />
             <p>${data[3].name}</p>
           </td>
-          <td>${data[3].current_price}</td>
+          <td>${data[3].current_price.toLocaleString('en-EN')}</td>
           <td>${data[3].price_change_percentage_24h.toFixed(2)} %</td>
           <td>$ ${data[3].market_cap.toLocaleString('en-EN')}</td>
           </tr>
@@ -102,7 +102,7 @@ let updateUI = (data) => {
           <img src="${data[4].image}" alt="" \ width="42" height="42" />
             <p>${data[4].name}</p>
           </td>
-          <td>${data[4].current_price}</td>
+          <td>${data[4].current_price.toLocaleString('en-EN')}</td>
           <td>${data[4].price_change_percentage_24h.toFixed(2)} %</td>
           <td>$ ${data[4].market_cap.toLocaleString('en-EN')}</td>
           </tr>
@@ -111,7 +111,7 @@ let updateUI = (data) => {
           <img src="${data[5].image}" alt="" \ width="42" height="42" />
             <p>${data[5].name}</p>
           </td>
-          <td>${data[5].current_price}</td>
+          <td>${data[5].current_price.toLocaleString('en-EN')}</td>
           <td>${data[5].price_change_percentage_24h.toFixed(2)} %</td>
           <td>$ ${data[5].market_cap.toLocaleString('en-EN')}</td>
           </tr>
@@ -120,7 +120,7 @@ let updateUI = (data) => {
           <img src="${data[6].image}" alt="" \ width="42" height="42" />
             <p>${data[6].name}</p>
           </td>
-          <td>${data[6].current_price}</td>
+          <td>${data[6].current_price.toLocaleString('en-EN')}</td>
           <td>${data[6].price_change_percentage_24h.toFixed(2)} %</td>
           <td>$ ${data[6].market_cap.toLocaleString('en-EN')}</td>
           </tr>
@@ -129,7 +129,7 @@ let updateUI = (data) => {
           <img src="${data[7].image}" alt="" \ width="42" height="42" />
             <p>${data[7].name}</p>
           </td>
-          <td>${data[7].current_price}</td>
+          <td>${data[7].current_price.toLocaleString('en-EN')}</td>
           <td>${data[7].price_change_percentage_24h.toFixed(2)} %</td>
           <td>$ ${data[7].market_cap.toLocaleString('en-EN')}</td>
           </tr>
@@ -138,7 +138,7 @@ let updateUI = (data) => {
           <img src="${data[8].image}" alt="" \ width="42" height="42" />
             <p>${data[8].name}</p>
           </td>
-          <td>${data[8].current_price}</td>
+          <td>${data[8].current_price.toLocaleString('en-EN')}</td>
           <td>${data[8].price_change_percentage_24h.toFixed(2)} %</td>
           <td>$ ${data[8].market_cap.toLocaleString('en-EN')}</td>
           </tr>
@@ -147,7 +147,7 @@ let updateUI = (data) => {
           <img src="${data[9].image}" alt="" \ width="42" height="42" />
             <p>${data[9].name}</p>
           </td>
-          <td>${data[9].current_price}</td>
+          <td>${data[9].current_price.toLocaleString('en-EN')}</td>
           <td>${data[9].price_change_percentage_24h.toFixed(2)} %</td>
           <td>$ ${data[9].market_cap.toLocaleString('en-EN')}</td>
           </tr>
