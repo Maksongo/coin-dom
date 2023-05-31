@@ -219,25 +219,25 @@
 //   });
 // };
 
-// function MakePosNeg() {
-//     var TDs = document.querySelectorAll('td:nth-child(3)');
+function MakePosNeg() {
+    var TDs = document.querySelectorAll('td:nth-child(3)');
     
-//     for (var i = 0; i < TDs.length; i++) {
-//     var temp = TDs[i];
-//     if (temp.firstChild.nodeValue.indexOf('-') == 0) {temp.className = "negative";}
-//     else {temp.className = "positive";}
-//     }
-//     };
+    for (var i = 0; i < TDs.length; i++) {
+    var temp = TDs[i];
+    if (temp.firstChild.nodeValue.indexOf('-') == 0) {temp.className = "negative";}
+    else {temp.className = "positive";}
+    }
+    };
 
-//  function WelcomeMakePosNeg() {
-//     var Num = document.querySelectorAll('.welcome_box_any_price_color');
+ function WelcomeMakePosNeg() {
+    var Num = document.querySelectorAll('.welcome_box_any_price_color');
     
-//     for (var i = 0; i < Num.length; i++) {
-//     var temp = Num[i];
-//     if (temp.firstChild.nodeValue.indexOf('-') == 0) {temp.className = "negative";}
-//     else {temp.className = "positive";}
-//     }
-//     };
+    for (var i = 0; i < Num.length; i++) {
+    var temp = Num[i];
+    if (temp.firstChild.nodeValue.indexOf('-') == 0) {temp.className = "negative";}
+    else {temp.className = "positive";}
+    }
+    };
 
 window.addEventListener("scroll", function(){
     let header = document.querySelector("header")

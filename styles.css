@@ -35,12 +35,11 @@ header {
   z-index: 9999;
   /* background: #845ec2; */
   /* position: fixed; */
-  transition: 0.6s;
 }
 
 header.sticky{
   background-color: #0f051d;
-  transition: 0.6s;
+  z-index: 9999;
 }
 
 body {
@@ -61,7 +60,8 @@ nav ul li {
   margin: 10px 30px;
 }
 nav ul li a,
-nav h1 {
+nav h1,
+nav a {
   text-decoration: none;
   color: #f3f2f4;
 }
@@ -153,7 +153,8 @@ top: 0;
 }
 
 .content-table thead tr {
-  background-color: #845ec2;
+  background-image: linear-gradient(25deg,#2600fc,#ff00ea);
+  color: transparent;
   font-weight: bold;
 }
 
@@ -242,6 +243,20 @@ td:nth-child(4) {
   overflow: auto;
 }
 
+.choose_us_box h1{
+  text-align: center;
+  margin: 0 0 80px 0;
+  font-size: 80px;
+  font-weight: normal;
+}
+
+.choose_us_box span{
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(25deg,#2600fc,#ff00ea);
+  color: transparent;
+}
+
 .flex-container {
   display: flex;
   justify-content: space-around;
@@ -262,9 +277,11 @@ td:nth-child(4) {
   padding: 25px;
   margin: 20px auto;
   border: 1px solid black;
+  border-color: #362f40;
   border-radius: 2.4rem;
   display: flex;
   min-height: 160px;
+  background-color: #1b1229;
 }
 
 .any_choose_box img {
@@ -303,7 +320,7 @@ footer {
 }
 
 .join_us_button button {
-  background-color: #845EC2;
+  background-image: linear-gradient(25deg,#2600fc,#ff00ea);
   border-radius: 20px;
   border: 1px solid #7243be;
   display: inline-block;
@@ -328,4 +345,33 @@ footer {
 }
 .positive {
   color: #00896F
+}
+
+
+
+
+li > a::after {
+  
+  content: "";
+  display: block;
+  margin: auto;
+  height: 2px;
+  width: 0;
+  top: 5px;
+  background: transparent;
+  transition: all 0.3s;
+  
+}
+
+li > a:hover::after, li > a.active-nav::after {
+  width: 100%;
+  background: #f3f2f4;
+  
+}
+
+nav a h1:hover{
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(25deg,#2600fc,#ff00ea);
+  color: transparent;
 }
