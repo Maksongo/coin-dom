@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+h1, h2, p, td{
+  color: #f3f2f4
+}
+
 /* Скролл бар */
 ::-webkit-scrollbar {
   width: 12px; /* ширина нового скроллбара */
@@ -33,7 +37,7 @@ header {
 
 body {
   font-family: "Space Grotesk", sans-serif;
-  background: #fff6ff;
+  background: #0f051d
 }
 
 nav {
@@ -51,7 +55,7 @@ nav ul li {
 nav ul li a,
 nav h1 {
   text-decoration: none;
-  color: white;
+  color: #f3f2f4
 }
 
 .wrapper {
@@ -210,6 +214,7 @@ td:nth-child(4) {
 
 .market_box {
   margin-bottom: 240px;
+  overflow: auto;
 }
 
 .flex-container {
