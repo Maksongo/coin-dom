@@ -157,89 +157,95 @@
 // WelcomeMakePosNeg();
 // };
 
-// let refreshPage = (data) => {
-//   buttonPageOne.addEventListener("click", () => {
-//     console.log("you clicked me");
-//     currentPage = 1;
-//     getBitcoinPrice()
-//       .then((data) => {
-//         updateUI(data);
-//         refreshPage(data);
-//       })
-//       .catch((err) => console.log(err));
-//     updateUI(data);
-//   });
+let refreshPage = (data) => {
+  buttonPageOne.addEventListener("click", () => {
+    console.log("you clicked me");
+    currentPage = 1;
+    getBitcoinPrice()
+      .then((data) => {
+        updateUI(data);
+        refreshPage(data);
+      })
+      .catch((err) => console.log(err));
+    updateUI(data);
+  });
 
-//   buttonPageTwo.addEventListener("click", () => {
-//     console.log("you clicked me");
-//     currentPage = 2;
-//     getBitcoinPrice()
-//       .then((data) => {
-//         updateUI(data);
-//         refreshPage(data);
-//       })
-//       .catch((err) => console.log(err));
-//     updateUI(data);
-//   });
+  buttonPageTwo.addEventListener("click", () => {
+    console.log("you clicked me");
+    currentPage = 2;
+    getBitcoinPrice()
+      .then((data) => {
+        updateUI(data);
+        refreshPage(data);
+      })
+      .catch((err) => console.log(err));
+    updateUI(data);
+  });
 
-//   buttonPageThree.addEventListener("click", () => {
-//     console.log("you clicked me");
-//     currentPage = 3;
-//     getBitcoinPrice()
-//       .then((data) => {
-//         updateUI(data);
-//         refreshPage(data);
-//       })
-//       .catch((err) => console.log(err));
-//     updateUI(data);
-//   });
+  buttonPageThree.addEventListener("click", () => {
+    console.log("you clicked me");
+    currentPage = 3;
+    getBitcoinPrice()
+      .then((data) => {
+        updateUI(data);
+        refreshPage(data);
+      })
+      .catch((err) => console.log(err));
+    updateUI(data);
+  });
 
-//   buttonPageFour.addEventListener("click", () => {
-//     console.log("you clicked me");
-//     currentPage = 4;
-//     getBitcoinPrice()
-//       .then((data) => {
-//         updateUI(data);
-//         refreshPage(data);
-//       })
-//       .catch((err) => console.log(err));
-//     updateUI(data);
-//   });
+  buttonPageFour.addEventListener("click", () => {
+    console.log("you clicked me");
+    currentPage = 4;
+    getBitcoinPrice()
+      .then((data) => {
+        updateUI(data);
+        refreshPage(data);
+      })
+      .catch((err) => console.log(err));
+    updateUI(data);
+  });
 
-//   buttonPageFive.addEventListener("click", () => {
-//     console.log("you clicked me");
-//     currentPage = 5;
-//     getBitcoinPrice()
-//       .then((data) => {
-//         updateUI(data);
-//         refreshPage(data);
-//       })
-//       .catch((err) => console.log(err));
-//     updateUI(data);
-//   });
-// };
+  buttonPageFive.addEventListener("click", () => {
+    console.log("you clicked me");
+    currentPage = 5;
+    getBitcoinPrice()
+      .then((data) => {
+        updateUI(data);
+        refreshPage(data);
+      })
+      .catch((err) => console.log(err));
+    updateUI(data);
+  });
+};
 
 function MakePosNeg() {
-    var TDs = document.querySelectorAll('td:nth-child(3)');
-    
-    for (var i = 0; i < TDs.length; i++) {
+  var TDs = document.querySelectorAll("td:nth-child(3)");
+
+  for (var i = 0; i < TDs.length; i++) {
     var temp = TDs[i];
-    if (temp.firstChild.nodeValue.indexOf('-') == 0) {temp.className = "negative";}
-    else {temp.className = "positive";}
+    if (temp.firstChild.nodeValue.indexOf("-") == 0) {
+      temp.className = "negative";
+    } else {
+      temp.className = "positive";
     }
-    };
+  }
+}
 
- function WelcomeMakePosNeg() {
-    var Num = document.querySelectorAll('.welcome_box_any_price_color');
-    
-    for (var i = 0; i < Num.length; i++) {
+function WelcomeMakePosNeg() {
+  var Num = document.querySelectorAll(".welcome_box_any_price_color");
+
+  for (var i = 0; i < Num.length; i++) {
     var temp = Num[i];
-    if (temp.firstChild.nodeValue.indexOf('-') == 0) {temp.className = "negative";}
-    else {temp.className = "positive";}
+    if (temp.firstChild.nodeValue.indexOf("-") == 0) {
+      temp.className = "negative";
+    } else {
+      temp.className = "positive";
     }
-    };
+  }
+}
 
-window.addEventListener("scroll", function(){
-    let header = document.querySelector("header")
-    header.classList.toggle("sticky", window.scrollY > 140)
-})
+window.addEventListener("scroll", function () {
+  let header = document.querySelector("header");
+  header.classList.toggle("sticky", window.scrollY > 180);
+});
