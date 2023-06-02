@@ -156,6 +156,7 @@ top: 0;
   background-image: linear-gradient(25deg,#2600fc,#ff00ea);
   color: transparent;
   font-weight: bold;
+  cursor: default;
 }
 
 .content-table th,
@@ -184,6 +185,10 @@ td:first-child {
 }
 td img {
   margin: 0 10 0 0px;
+}
+
+tr {
+  cursor: pointer;
 }
 
 tr:hover {
