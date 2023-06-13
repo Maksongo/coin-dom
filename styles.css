@@ -240,7 +240,8 @@ td:nth-child(4) {
 }
 
 .market_pages button:hover{
-  background-color: #845ec23f;;
+  position: relative;
+  bottom: 1px;
 }
 
 .market_box {
