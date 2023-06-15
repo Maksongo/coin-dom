@@ -25,11 +25,20 @@
       align-items: center;
       justify-content: center;
       position: relative;
-      top: 400px;
+      top: 300px;
       }
       .coinpage_imageAndInfo{
         display: flex;
         flex-direction: column;
+        text-align: center;
+      }
+      .coinpage_imageAndInfo p, .coinpage_imageAndInfo h1 {
+        margin-top: 20;
+      }
+      .coinpage_textpart{
+        display: flex;
+        align-items: flex-start;
+        justify-content:flex-start;
       }
       .coinpage_textpart_toppart{
         display: flex;
@@ -57,9 +66,9 @@
 
     <div class="coinpage_coinbox">
       <div class="coinpage_imageAndInfo">
-      <img class="coinpage_image" src="img/empty.png" alt="">
-      <p>Name</p>
-      <p>Rank</p> 
+      <img class="coinpage_image" src="https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579" alt="">
+      <h1>Bitcoin</h1>
+      <p>Rank: #1</p> 
     </div>
       <div class="coinpage_textpart">
         <div class="coinpage_textpart_toppart">
