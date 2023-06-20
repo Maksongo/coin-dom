@@ -21,7 +21,7 @@
       </a>
         <!-- <img src="img/logo.png" alt="" /> -->
         <ul>
-          <li><a href="">Home</a></li>
+          <li><a id="scrollDown" href="">Home</a></li>
           <li><a href="">Market</a></li>
           <li><a href="">Choose Us</a></li>
           <li><a href="">Join</a></li>
@@ -249,7 +249,7 @@
         </div>
       </div>
 
-      <div class="join_us_box">
+      <div class="join_us_box" id="test">
         <div class="join_us_textpart_one">
           <img
           class="bitcoin_animation"
@@ -313,5 +313,16 @@
 
     </script> --> 
     <script src="app.js"></script>
+    
+    <script>
+      const $scrollDown = document.querySelector('#scrollDown');
+
+      $scrollDown.onclick = function (e) {
+        e.preventDefault();
+        scrollBy({ top:200, behavior: 'smooth' });
+};
+
+    </script>
+
   </body>
 </html>
