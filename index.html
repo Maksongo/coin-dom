@@ -317,18 +317,36 @@
     <script>
       const HomeNavButton = document.querySelector('#HomeNavButtonID');
       const MarketNavButton = document.querySelector('#MarketNavButtonID');
+      const ChooseUsNavButton = document.querySelector('#ChooseUsNavButtonID');
+      const JoinNavButton = document.querySelector('#JoinNavButtonID');
 
-      MarketNavButton.onclick = function (e) {
+
+HomeNavButton.onclick = function (e) {
+        e.preventDefault();
+        window.scrollTo({
+  top: 0,
+  behavior: "smooth",
+});
+};      
+MarketNavButton.onclick = function (e) {
         e.preventDefault();
         window.scrollTo({
   top: 800,
   behavior: "smooth",
 });
 };
-HomeNavButton.onclick = function (e) {
+
+ChooseUsNavButton.onclick = function (e) {
         e.preventDefault();
         window.scrollTo({
-  top: 0,
+  top: 2200,
+  behavior: "smooth",
+});
+};
+JoinNavButton.onclick = function (e) {
+        e.preventDefault();
+        window.scrollTo({
+  top: 3200,
   behavior: "smooth",
 });
 };
