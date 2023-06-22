@@ -275,7 +275,7 @@ td:nth-child(4) {
 }
 
 .hand_with_coin{
-  width: 420px;
+  width: 320px;
   margin: 0 60px;
 }
 
@@ -383,9 +383,13 @@ nav a h1:hover{
 }
 
 
-.any_choose_box img{
+.any_choose_box i{
 background: linear-gradient(25deg,#2600fc,#ff00ea);
 width: 60px;
 height: 60px;
-border-radius: 20%
+border-radius: 20%;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 1.5rem;
 };
