@@ -314,6 +314,18 @@ td:nth-child(4) {
   justify-content: center;
 }
 
+.join_us_textpart_two h1{
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(25deg,#2600fc,#ff00ea);
+  color: transparent;  
+}
+
+.join_us_ptext p{
+margin: 20 0 60 0;
+font-size: 1.3em;
+}
+
 .join_us_box h1 {
   font-size: 100px;
 }
@@ -326,15 +338,16 @@ footer {
 
 .join_us_button button {
   background-image: linear-gradient(25deg,#2600fc,#ff00ea);
-  border-radius: 20px;
-  border: 1px solid #7243be;
+  border-radius: 10rem;
+  border: 0px solid #7243be;
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
-  font-family: Arial;
-  font-size: 17px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 20px;
   padding: 14px 45px;
   text-decoration: none;
+  padding: 1em 2em;
   margin-top: 15px;
 }
 .join_us_button button:hover {
