@@ -367,7 +367,13 @@ footer {
   color: #00896F
 }
 
-
+.footer_social_box, .footer_text_box{
+  display: flex;
+  justify-content: space-around;
+}
+.footer_social_box i{
+  margin: 0 15 40 15
+}
 
 
 li > a::after {
