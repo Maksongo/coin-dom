@@ -331,9 +331,11 @@ font-size: 1.3em;
 }
 
 footer {
+  display: flex;
+  justify-content: center;
   width: 100%;
-  height: 70px;
-  background: #845ec2;
+  /* height: 70px;
+  background: #845ec2; */
 }
 
 .join_us_button button {
