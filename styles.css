@@ -398,12 +398,21 @@ li > a:hover::after, li > a.active-nav::after {
   
 }
 
-nav a h1:hover{
+nav a h1:hover,{
   background-clip: text;
   -webkit-background-clip: text;
   background-image: linear-gradient(25deg,#2600fc,#ff00ea);
   color: transparent;
+  cursor: pointer;
+  transition: 0.3s ease-out;
 }
+
+.fa-brands:hover, .footer_text_box p:hover {
+  color: rgb(209, 209, 209) !important;
+  scale: 1.1;
+  cursor: pointer;
+  transition: 0.3s ease-out;
+} 
 
 
 .any_choose_box i{
