@@ -52,6 +52,10 @@ body {
 }
 /* Скролл бар */
 
+.mobile_version{
+  display: none;
+}
+
 header {
   width: 100%;
   padding: 0 15%;
@@ -492,6 +496,15 @@ text-align: center;
 @media screen and (max-width: 850px) {
 .bitcoin_animation, .eth_animation{
   display: none;
+}
+header{
+  padding: 0 5%;
+}
+.decstop_version{
+display: none;
+}
+.mobile_version{
+display: inline
 }
 }
 
