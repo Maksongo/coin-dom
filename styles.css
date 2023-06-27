@@ -538,8 +538,13 @@ footer {
     flex-direction: column;
   }
   .hand_with_coin {
-    width: 30%;
+    width: 20%;
     margin: 0 auto;
+  }
+  .any_choose_box{
+    width: 80%;
+    min-height: 110px;
+    justify-content: center;
   }
 }
 
