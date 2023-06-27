@@ -27,11 +27,20 @@
           <li><a id="ChooseUsNavButtonID" href="">Choose Us</a></li>
           <li><a id="JoinNavButtonID" href="">Join</a></li>
         </ul>
-        <ul class="mobile_version">
+        <ul class="mobile_version" id="mobile_version_button">
           <i class="fa-solid fa-bars-staggered fa-xl" style="color: #ffffff;"></i>
         </ul>
       </nav>
     </header>
+
+    <div class="mobile_version_box" id="mobile_version_boxID">
+      <ul class="mobile_version_box_menu">
+        <li><a id="HomeNavButtonID" href="">Home</a></li>
+        <li><a id="MarketNavButtonID" href="">Market</a></li>
+        <li><a id="ChooseUsNavButtonID" href="">Choose Us</a></li>
+        <li><a id="JoinNavButtonID" href="">Join</a></li>
+      </ul>
+    </div>
 
 <div class="gradient_background"></div>
 
@@ -341,6 +350,9 @@
       const ChooseUsNavButton = document.querySelector('#ChooseUsNavButtonID');
       const JoinNavButton = document.querySelector('#JoinNavButtonID');
 
+      const MobileVersionBox = document.querySelector('#mobile_version_boxID')
+      const mobileVersionButton= document.querySelector('#mobile_version_button')
+
 
 HomeNavButton.onclick = function (e) {
         e.preventDefault();
@@ -352,7 +364,7 @@ HomeNavButton.onclick = function (e) {
 MarketNavButton.onclick = function (e) {
         e.preventDefault();
         window.scrollTo({
-  top: 800,
+  top: 900,
   behavior: "smooth",
 });
 };
@@ -371,6 +383,10 @@ JoinNavButton.onclick = function (e) {
   behavior: "smooth",
 });
 };
+
+mobileVersionButton.onclick = function (e) {
+  MobileVersionBox.style.display = 'block';
+}
 
     </script>
 
