@@ -227,11 +227,17 @@ nav a h1:hover {
   color: transparent;
   font-weight: bold;
   cursor: default;
+  font-size: 1.3em;
 }
 
-.content-table th,
+.content-table th{
+  padding: 18px 15px;
+}
+
 .content-table td {
   padding: 25px 15px;
+  text-align: left;
+  font-size: 1.15em;
 }
 
 th {
@@ -245,7 +251,7 @@ th {
 }
 
 .content-table tbody tr:last-of-type {
-  border-bottom: 2px solid #845ec2;
+  border-bottom: 2px solid #7544c4;
 }
 
 td:first-child {
@@ -259,15 +265,11 @@ td img {
 
 tr {
   cursor: pointer;
+  text-align: left;
 }
 
 tr:hover {
-  background-color: #845ec23f;
-}
-
-td,
-tr {
-  text-align: left;
+  background-color: #261d33;
 }
 
 th:nth-child(1) {
@@ -300,7 +302,7 @@ td:nth-child(4) {
 
 .market_pages button {
   background-color: #f3f2f4;
-  border: 2px solid #845ec2;
+  border: 2px solid #261d33;
   border-radius: 50%;
   cursor: pointer;
   font-size: 1.1rem;
@@ -315,7 +317,7 @@ td:nth-child(4) {
 }
 
 .market_box {
-  margin-bottom: 240px;
+  margin-bottom: 160px;
   overflow: auto;
 }
 
