@@ -250,6 +250,26 @@ nav a h1:hover {
   margin: 4px 0px 4px 0px;
 }
 
+.welcome_mobile_button{
+  display: flex;
+  justify-content: center;
+}
+
+.welcome_mobile_button button{
+  background-image: linear-gradient(25deg, #2600fc, #ff00ea);
+  border-radius: 10rem;
+  border: 0px solid #7243be;
+  display: none;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 20px;
+  padding: 14px 45px;
+  text-decoration: none;
+  padding: 1em 2em;
+  margin-top: 15px;
+}
+
 .market_box_title {
   font-size: 2.5em;
 }
@@ -399,6 +419,7 @@ td:nth-child(4) {
   border-color: #362f40;
   border-radius: 1.5rem;
   display: flex;
+  align-items: center;
   min-height: 160px;
   background-color: #1b1229;
 }
@@ -524,7 +545,7 @@ footer {
 
 @media screen and (max-width: 1000px) {
   .welcome_box h1 {
-    font-size: 70px;
+    font-size: 65px;
   }
 }
 
@@ -550,5 +571,15 @@ footer {
     display: grid;
     grid-template-columns: 1fr 1fr;
     row-gap: 2rem;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .welcome_mobile_button button{
+display: inline-block;
+  }
+  .welcome_box_coinsPart{
+    display:none;
   }
 }
