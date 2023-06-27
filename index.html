@@ -40,6 +40,7 @@
     </header>
 
     <div class="mobile_version_box" id="mobile_version_boxID">
+      <i class="fa-solid fa-xmark fa-2xl mobile_verison_closebutton" id="moblie_verison_closebuttonID" style="color: #000000;"></i>
       <ul class="mobile_version_box_menu">
         <li><a id="HomeNavButtonID" href="">Home</a></li>
         <li><a id="MarketNavButtonID" href="">Market</a></li>
@@ -375,11 +376,16 @@
 
       const MobileVersionBox = document.querySelector("#mobile_version_boxID");
       const mobileVersionButton = document.querySelector("#mobile_version_button");
+      const moblie_verison_closebuttonID = document.querySelector("#moblie_verison_closebuttonID")
 
       mobileVersionButton.onclick = function (e) {
         MobileVersionBox.style.display = "block";
         MobileVersionBox.style.transform = "translateX(0%)";
       };
+
+      moblie_verison_closebuttonID.addEventListener('click', () => {
+        MobileVersionBox.style.transform = "translateX(-100%)";
+      });
 
       for (let i = 0; i < HomeNavButton.length; i++) {
         HomeNavButton[i].addEventListener("click", function (e) {
