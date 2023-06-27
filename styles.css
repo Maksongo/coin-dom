@@ -467,11 +467,39 @@ footer {
 @media screen and (max-width: 1200px) {
 .welcome_box h1{
 font-size: 80px;
+text-align: center;
 }
 }
+
+@media screen and (max-width: 1100px) {
+.flex-container{
+  flex-direction: column;
+}
+.hand_with_coin{
+  width: 30%;
+  margin: 0 auto;
+}
+}
+  
 
 @media screen and (max-width: 1000px) {
   .welcome_box h1{
   font-size: 70px;
+  }
+}
+
+
+@media screen and (max-width: 850px) {
+.bitcoin_animation, .eth_animation{
+  display: none;
+}
+}
+
+@media screen and (max-width: 700px) {
+  .welcome_box_coinsPart{
+    grid-row-gap: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 2rem;
   }
   }
