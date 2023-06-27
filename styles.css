@@ -63,7 +63,7 @@ body {
   background-color: #f3f2f4;
   z-index: 10000;
   display: none;
-  animation: 1s show ease;
+  animation: flip-2-ver-right-bck 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
 
 @keyframes show {
@@ -548,5 +548,21 @@ footer {
     display: grid;
     grid-template-columns: 1fr 1fr;
     row-gap: 2rem;
+  }
+}
+
+
+/* .flip-2-ver-right-bck {
+	animation: flip-2-ver-right-bck 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+} */
+
+@keyframes flip-2-ver-right-bck {
+  0% {
+    transform: translateX(0) translateZ(0) rotateY(0);
+    transform-origin: 100% 50%;
+  }
+  100% {
+    transform: translateX(100%) translateZ(-260px) rotateY(180deg);
+    transform-origin: 0% 50%;
   }
 }

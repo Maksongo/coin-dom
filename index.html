@@ -373,13 +373,12 @@
       const ChooseUsNavButton = document.querySelectorAll("#ChooseUsNavButtonID");
       const JoinNavButton = document.querySelectorAll("#JoinNavButtonID");
 
-      // HomeNavButton.onclick = function (e) {
-      // e.preventDefault();
-      // window.scrollTo({
-      //   top: 0,
-      //   behavior: "smooth",
-      // });
-      // };
+      const MobileVersionBox = document.querySelector("#mobile_version_boxID");
+      const mobileVersionButton = document.querySelector("#mobile_version_button");
+
+      mobileVersionButton.onclick = function (e) {
+        MobileVersionBox.style.display = "block";
+      };
 
       for (let i = 0; i < HomeNavButton.length; i++) {
         HomeNavButton[i].addEventListener("click", function (e) {
@@ -389,6 +388,7 @@
             top: 0,
             behavior: "smooth",
           });
+          MobileVersionBox.style.display = "none";
         });
       }
 
@@ -400,33 +400,35 @@
             top: 900,
             behavior: "smooth",
           });
+          MobileVersionBox.style.display = "none";
         });
       }
 
-      ChooseUsNavButton.onclick = function (e) {
-        e.preventDefault();
-        window.scrollTo({
-          top: 2200,
-          behavior: "smooth",
+      for (let i = 0; i < ChooseUsNavButton.length; i++) {
+        ChooseUsNavButton[i].addEventListener("click", function (e) {
+          e.preventDefault();
+          console.log(i, "you clicked me");
+          window.scrollTo({
+            top: 2200,
+            behavior: "smooth",
+          });
+          MobileVersionBox.style.display = "none";
         });
-      };
+      }
 
-      JoinNavButton.onclick = function (e) {
-        e.preventDefault();
-        window.scrollTo({
-          top: 3200,
-          behavior: "smooth",
+
+      for (let i = 0; i < JoinNavButton.length; i++) {
+        JoinNavButton[i].addEventListener("click", function (e) {
+          e.preventDefault();
+          console.log(i, "you clicked me");
+          window.scrollTo({
+            top: 3200,
+            behavior: "smooth",
+          });
+          MobileVersionBox.style.display = "none";
         });
-      };
+      }
 
-      const MobileVersionBox = document.querySelector("#mobile_version_boxID");
-      const mobileVersionButton = document.querySelector(
-        "#mobile_version_button"
-      );
-
-      mobileVersionButton.onclick = function (e) {
-        MobileVersionBox.style.display = "block";
-      };
     </script>
   </body>
 </html>
