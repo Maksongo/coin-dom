@@ -378,6 +378,7 @@
 
       mobileVersionButton.onclick = function (e) {
         MobileVersionBox.style.display = "block";
+        MobileVersionBox.style.transform = "translateX(0%)";
       };
 
       for (let i = 0; i < HomeNavButton.length; i++) {
@@ -388,7 +389,7 @@
             top: 0,
             behavior: "smooth",
           });
-          MobileVersionBox.style.display = "none";
+          MobileVersionBox.style.transform = "translateX(-100%)";
         });
       }
 
@@ -400,7 +401,7 @@
             top: 900,
             behavior: "smooth",
           });
-          MobileVersionBox.style.display = "none";
+          MobileVersionBox.style.transform = "translateX(-100%)";
         });
       }
 
@@ -412,7 +413,7 @@
             top: 2200,
             behavior: "smooth",
           });
-          MobileVersionBox.style.display = "none";
+          MobileVersionBox.style.transform = "translateX(-100%)";
         });
       }
 
@@ -425,7 +426,7 @@
             top: 3200,
             behavior: "smooth",
           });
-          MobileVersionBox.style.display = "none";
+          MobileVersionBox.style.transform = "translateX(-100%)";
         });
       }
 
