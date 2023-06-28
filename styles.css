@@ -551,7 +551,7 @@ footer {
   .any_choose_box{
     width: 80%;
     min-height: 110px;
-    justify-content: center;
+    /* justify-content: center; */
   }
 }
 
@@ -603,6 +603,7 @@ display: inline-block;
   }
   .join_us_box h1 {
     font-size: 60px;
+    text-align: center;
   }
   .join_us_ptext p{
   font-size: 1.2em;
