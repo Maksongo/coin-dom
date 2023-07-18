@@ -117,9 +117,7 @@
               <th>Market Cap</th>
             </tr>
           </thead>
-          <tr
-            onclick="location.href = 'http://127.0.0.1:5500/coin-dom/index.html'"
-          >
+          <tr class="123"href="http://chriscoyier.net" onclick="window.open(this.href); return false;">
             <td>
               <img src="img/empty.png" alt="" \ width="42" height="42" />
               <p>name</p>
@@ -379,18 +377,12 @@
     <script>
       const HomeNavButton = document.querySelectorAll("#HomeNavButtonID");
       const MarketNavButton = document.querySelectorAll("#MarketNavButtonID");
-      const ChooseUsNavButton = document.querySelectorAll(
-        "#ChooseUsNavButtonID"
-      );
+      const ChooseUsNavButton = document.querySelectorAll("#ChooseUsNavButtonID");
       const JoinNavButton = document.querySelectorAll("#JoinNavButtonID");
 
       const MobileVersionBox = document.querySelector("#mobile_version_boxID");
-      const mobileVersionButton = document.querySelector(
-        "#mobile_version_button"
-      );
-      const moblie_verison_closebuttonID = document.querySelector(
-        "#moblie_verison_closebuttonID"
-      );
+      const mobileVersionButton = document.querySelector("#mobile_version_button");
+      const moblie_verison_closebuttonID = document.querySelector("#moblie_verison_closebuttonID");
 
       mobileVersionButton.onclick = function (e) {
         MobileVersionBox.style.display = "block";

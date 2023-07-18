@@ -64,8 +64,8 @@
         <h1 href="">COINDOM</h1>
       </a>
         <ul>
-          <li><a href="">Home</a></li>
-          <li><a href="">Market</a></li>
+          <li><a id="NewTest" href="">Home</a></li>
+          <li><a id="NewTest" href="">Market</a></li>
           <li><a href="">Choose Us</a></li>
           <li><a href="">Join</a></li>
         </ul>
@@ -99,6 +99,22 @@
     </div>
 
 
+  
     <!-- <footer></footer> -->
-  </body>
+<script>
+
+  const NewTestNotID = document.querySelector("#NewTest");
+
+  NewTestNotID.addEventListener('click', (e) =>{
+
+    e.preventDefault();
+
+    window.location.href = 'http://127.0.0.1:5500/coin-dom/index.html';
+
+});
+
+
+</script>
+ 
+</body>
 </html>
