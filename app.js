@@ -29,29 +29,18 @@ getBitcoinPrice()
   .catch((err) => console.log(err));
 
 let updateUI = (data) => {
-  WelcomeBoxCoinsPart.innerHTML = `
-  <div>
-  <img src="${data[0].image}}" alt="" \ width="100" height="100" />
-  <p>${data[0].name} <span class="welcome_box_any_price_color">${data[0].price_change_percentage_24h.toFixed(2)}%</span></p>
-  <p>$ ${data[0].current_price.toLocaleString('en-EN')}</p>
-</div>
-<div>
-<img src="${data[1].image}}" alt="" \ width="100" height="100" />
-<p>${data[1].name} <span class="welcome_box_any_price_color">${data[1].price_change_percentage_24h.toFixed(2)}%</span></p>
-<p>$ ${data[1].current_price.toLocaleString('en-EN')}</p>
-</div>
-<div>
-<img src="${data[2].image}}" alt="" \ width="100" height="100" />
-<p>${data[2].name} <span class="welcome_box_any_price_color">${data[2].price_change_percentage_24h.toFixed(2)}%</span></p>
-<p>$ ${data[2].current_price.toLocaleString('en-EN')}</p>
-</div>
-<div>
-<img src="${data[3].image}}" alt="" \ width="100" height="100" />
-<p>${data[3].name} <span class="welcome_box_any_price_color">${data[3].price_change_percentage_24h.toFixed(2)}%</span></p>
-<p>$ ${data[3].current_price.toLocaleString('en-EN')}</p>
-</div>
-</div>
-`;
+
+let emptyString = ``;
+
+for (let i = 0; i < 4; i++) {
+  emptyString += `<div>
+  <img src="${data[i].image}}" alt="" \ width="100" height="100" />
+  <p>${data[i].name} <span class="welcome_box_any_price_color">${data[i].price_change_percentage_24h.toFixed(2)}%</span></p>
+  <p>$ ${data[i].current_price.toLocaleString('en-EN')}</p>
+  </div>`
+}
+
+WelcomeBoxCoinsPart.innerHTML = emptyString;
 
   contentTable.innerHTML = `
 <table class="content-table">
