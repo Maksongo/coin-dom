@@ -1,11 +1,13 @@
 const WelcomeBoxCoinsPart = document.querySelector(".welcome_box_coinsPart");
 const contentTable = document.querySelector(".content-table");
 
-const buttonPageOne = document.querySelector(".button_page_1");
-const buttonPageTwo = document.querySelector(".button_page_2");
-const buttonPageThree = document.querySelector(".button_page_3");
-const buttonPageFour = document.querySelector(".button_page_4");
-const buttonPageFive = document.querySelector(".button_page_5");
+var buttons = [
+  document.querySelector(".button_page_1"),
+  document.querySelector(".button_page_2"),
+  document.querySelector(".button_page_3"),
+  document.querySelector(".button_page_4"),
+  document.querySelector(".button_page_5"),
+];
 
 let currentPage = 1;
 
@@ -153,77 +155,44 @@ let updateUI = (data) => {
           </tr>
         </table>`;
 
-  MakePosNeg("td:nth-child(3)");
-  MakePosNeg(".welcome_box_any_price_color");
+MakePosNeg();
+WelcomeMakePosNeg();
 };
 
 let refreshPage = (data) => {
-  buttonPageOne.addEventListener("click", () => {
-    console.log("you clicked me");
-    currentPage = 1;
-    getBitcoinPrice()
-      .then((data) => {
-        updateUI(data);
-        refreshPage(data);
-      })
-      .catch((err) => console.log(err));
-    updateUI(data);
-  });
-
-  buttonPageTwo.addEventListener("click", () => {
-    console.log("you clicked me");
-    currentPage = 2;
-    getBitcoinPrice()
-      .then((data) => {
-        updateUI(data);
-        refreshPage(data);
-      })
-      .catch((err) => console.log(err));
-    updateUI(data);
-  });
-
-  buttonPageThree.addEventListener("click", () => {
-    console.log("you clicked me");
-    currentPage = 3;
-    getBitcoinPrice()
-      .then((data) => {
-        updateUI(data);
-        refreshPage(data);
-      })
-      .catch((err) => console.log(err));
-    updateUI(data);
-  });
-
-  buttonPageFour.addEventListener("click", () => {
-    console.log("you clicked me");
-    currentPage = 4;
-    getBitcoinPrice()
-      .then((data) => {
-        updateUI(data);
-        refreshPage(data);
-      })
-      .catch((err) => console.log(err));
-    updateUI(data);
-  });
-
-  buttonPageFive.addEventListener("click", () => {
-    console.log("you clicked me");
-    currentPage = 5;
-    getBitcoinPrice()
-      .then((data) => {
-        updateUI(data);
-        refreshPage(data);
-      })
-      .catch((err) => console.log(err));
-    updateUI(data);
-  });
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      console.log("you clicked me");
+      currentPage = 1;
+      getBitcoinPrice()
+        .then((data) => {
+          updateUI(data);
+          refreshPage(data);
+        })
+        .catch((err) => console.log(err));
+      updateUI(data);
+    });
+  })
 };
 
-function MakePosNeg(param) {
-  var TDs = document.querySelectorAll(param);
+function MakePosNeg() {
+  var TDs = document.querySelectorAll("td:nth-child(3)");
 
   for (var i = 0; i < TDs.length; i++) {
     var temp = TDs[i];
+    if (temp.firstChild.nodeValue.indexOf("-") == 0) {
+      temp.className = "negative";
+    } else {
+      temp.className = "positive";
+    }
+  }
+}
+
+function WelcomeMakePosNeg() {
+  var Num = document.querySelectorAll(".welcome_box_any_price_color");
+
+  for (var i = 0; i < Num.length; i++) {
+    var temp = Num[i];
     if (temp.firstChild.nodeValue.indexOf("-") == 0) {
       temp.className = "negative";
     } else {
