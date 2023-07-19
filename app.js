@@ -160,10 +160,10 @@ WelcomeMakePosNeg();
 };
 
 let refreshPage = (data) => {
-  buttons.forEach((button) => {
+  buttons.forEach((button, index) => {
     button.addEventListener("click", () => {
       console.log("you clicked me");
-      currentPage = 1;
+      currentPage = index+1;
       getBitcoinPrice()
         .then((data) => {
           updateUI(data);
