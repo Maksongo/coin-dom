@@ -1,11 +1,13 @@
 const WelcomeBoxCoinsPart = document.querySelector(".welcome_box_coinsPart");
 const contentTable = document.querySelector(".content-table");
 
-const buttonPageOne = document.querySelector(".button_page_1");
-const buttonPageTwo = document.querySelector(".button_page_2");
-const buttonPageThree = document.querySelector(".button_page_3");
-const buttonPageFour = document.querySelector(".button_page_4");
-const buttonPageFive = document.querySelector(".button_page_5");
+var buttons = [
+  document.querySelector(".button_page_1"),
+  document.querySelector(".button_page_2"),
+  document.querySelector(".button_page_3"),
+  document.querySelector(".button_page_4"),
+  document.querySelector(".button_page_5"),
+];
 
 let currentPage = 1;
 
@@ -27,29 +29,18 @@ getBitcoinPrice()
   .catch((err) => console.log(err));
 
 let updateUI = (data) => {
-  WelcomeBoxCoinsPart.innerHTML = `
-  <div>
-  <img src="${data[0].image}}" alt="" \ width="100" height="100" />
-  <p>${data[0].name} <span class="welcome_box_any_price_color">${data[0].price_change_percentage_24h.toFixed(2)}%</span></p>
-  <p>$ ${data[0].current_price.toLocaleString('en-EN')}</p>
-</div>
-<div>
-<img src="${data[1].image}}" alt="" \ width="100" height="100" />
-<p>${data[1].name} <span class="welcome_box_any_price_color">${data[1].price_change_percentage_24h.toFixed(2)}%</span></p>
-<p>$ ${data[1].current_price.toLocaleString('en-EN')}</p>
-</div>
-<div>
-<img src="${data[2].image}}" alt="" \ width="100" height="100" />
-<p>${data[2].name} <span class="welcome_box_any_price_color">${data[2].price_change_percentage_24h.toFixed(2)}%</span></p>
-<p>$ ${data[2].current_price.toLocaleString('en-EN')}</p>
-</div>
-<div>
-<img src="${data[3].image}}" alt="" \ width="100" height="100" />
-<p>${data[3].name} <span class="welcome_box_any_price_color">${data[3].price_change_percentage_24h.toFixed(2)}%</span></p>
-<p>$ ${data[3].current_price.toLocaleString('en-EN')}</p>
-</div>
-</div>
-`;
+
+let emptyString = ``;
+
+for (let i = 0; i < 4; i++) {
+  emptyString += `<div>
+  <img src="${data[i].image}}" alt="" \ width="100" height="100" />
+  <p>${data[i].name} <span class="welcome_box_any_price_color">${data[i].price_change_percentage_24h.toFixed(2)}%</span></p>
+  <p>$ ${data[i].current_price.toLocaleString('en-EN')}</p>
+  </div>`
+}
+
+WelcomeBoxCoinsPart.innerHTML = emptyString;
 
   contentTable.innerHTML = `
 <table class="content-table">
@@ -153,90 +144,31 @@ let updateUI = (data) => {
           </tr>
         </table>`;
 
-MakePosNeg();
-WelcomeMakePosNeg();
+MakePosNeg("td:nth-child(3)");
+MakePosNeg(".welcome_box_any_price_color");
 };
 
 let refreshPage = (data) => {
-  buttonPageOne.addEventListener("click", () => {
-    console.log("you clicked me");
-    currentPage = 1;
-    getBitcoinPrice()
-      .then((data) => {
-        updateUI(data);
-        refreshPage(data);
-      })
-      .catch((err) => console.log(err));
-    updateUI(data);
-  });
-
-  buttonPageTwo.addEventListener("click", () => {
-    console.log("you clicked me");
-    currentPage = 2;
-    getBitcoinPrice()
-      .then((data) => {
-        updateUI(data);
-        refreshPage(data);
-      })
-      .catch((err) => console.log(err));
-    updateUI(data);
-  });
-
-  buttonPageThree.addEventListener("click", () => {
-    console.log("you clicked me");
-    currentPage = 3;
-    getBitcoinPrice()
-      .then((data) => {
-        updateUI(data);
-        refreshPage(data);
-      })
-      .catch((err) => console.log(err));
-    updateUI(data);
-  });
-
-  buttonPageFour.addEventListener("click", () => {
-    console.log("you clicked me");
-    currentPage = 4;
-    getBitcoinPrice()
-      .then((data) => {
-        updateUI(data);
-        refreshPage(data);
-      })
-      .catch((err) => console.log(err));
-    updateUI(data);
-  });
-
-  buttonPageFive.addEventListener("click", () => {
-    console.log("you clicked me");
-    currentPage = 5;
-    getBitcoinPrice()
-      .then((data) => {
-        updateUI(data);
-        refreshPage(data);
-      })
-      .catch((err) => console.log(err));
-    updateUI(data);
-  });
+  buttons.forEach((button, index) => {
+    button.addEventListener("click", () => {
+      console.log("you clicked me");
+      currentPage = index+1;
+      getBitcoinPrice()
+        .then((data) => {
+          updateUI(data);
+          refreshPage(data);
+        })
+        .catch((err) => console.log(err));
+      updateUI(data);
+    });
+  })
 };
 
-function MakePosNeg() {
-  var TDs = document.querySelectorAll("td:nth-child(3)");
+function MakePosNeg(arg) {
+  var TDs = document.querySelectorAll(arg);
 
   for (var i = 0; i < TDs.length; i++) {
     var temp = TDs[i];
-    if (temp.firstChild.nodeValue.indexOf("-") == 0) {
-      temp.className = "negative";
-    } else {
-      temp.className = "positive";
-    }
-  }
-}
-
-function WelcomeMakePosNeg() {
-  var Num = document.querySelectorAll(".welcome_box_any_price_color");
-
-  for (var i = 0; i < Num.length; i++) {
-    var temp = Num[i];
     if (temp.firstChild.nodeValue.indexOf("-") == 0) {
       temp.className = "negative";
     } else {
