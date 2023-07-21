@@ -1,13 +1,15 @@
 const WelcomeBoxCoinsPart = document.querySelector(".welcome_box_coinsPart");
 const contentTable = document.querySelector(".content-table");
 
-var buttons = [
+let buttons = [
   document.querySelector(".button_page_1"),
   document.querySelector(".button_page_2"),
   document.querySelector(".button_page_3"),
   document.querySelector(".button_page_4"),
   document.querySelector(".button_page_5"),
 ];
+
+let shis = document.querySelector(".popka");
 
 let currentPage = 1;
 
@@ -30,20 +32,47 @@ getBitcoinPrice()
 
 let updateUI = (data) => {
 
-let emptyString = ``;
+let WelcomeEmptyString = ``;
 
 for (let i = 0; i < 4; i++) {
-  emptyString += `<div>
+  WelcomeEmptyString += `<div>
   <img src="${data[i].image}}" alt="" \ width="100" height="100" />
   <p>${data[i].name} <span class="welcome_box_any_price_color">${data[i].price_change_percentage_24h.toFixed(2)}%</span></p>
   <p>$ ${data[i].current_price.toLocaleString('en-EN')}</p>
   </div>`
 }
 
-WelcomeBoxCoinsPart.innerHTML = emptyString;
+WelcomeBoxCoinsPart.innerHTML = WelcomeEmptyString;
 
-  contentTable.innerHTML = `
-<table class="content-table">
+ContentTableEmptyString = ``;
+
+for (let i = 0; i < 10; i++) {
+  ContentTableEmptyString += `
+  <tr>
+  <td>
+  <img src="${data[i].image}" alt="" \ width="42" height="42" />
+    <p>${data[i].name}</p>
+  </td>
+  <td>${data[i].current_price.toLocaleString('en-EN')}</td>
+  <td>${data[i].price_change_percentage_24h.toFixed(2)} %</td>
+  <td>$ ${data[i].market_cap.toLocaleString('en-EN')}</td>
+</tr>
+  `
+}
+
+contentTable.innerHTML = `<table class="content-table">
+<thead>
+  <tr>
+    <th>Coin</th>
+    <th>Price</th>
+    <th>24h Change</th>
+    <th>Last 7 days</th>
+  </tr>
+</thead>${ContentTableEmptyString}`;
+
+
+//   contentTable.innerHTML = `
+{/* <table class="content-table">
           <thead>
             <tr>
               <th>Coin</th>
@@ -51,98 +80,98 @@ WelcomeBoxCoinsPart.innerHTML = emptyString;
               <th>24h Change</th>
               <th>Last 7 days</th>
             </tr>
-          </thead>
-          <tr>
-            <td>
-            <img src="${data[0].image}" alt="" \ width="42" height="42" />
-              <p>${data[0].name}</p>
-            </td>
-            <td>${data[0].current_price.toLocaleString('en-EN')}</td>
-            <td>${data[0].price_change_percentage_24h.toFixed(2)} %</td>
-            <td>$ ${data[0].market_cap.toLocaleString('en-EN')}</td>
-          </tr>
-          <tr>
-          <td>
-          <img src="${data[1].image}" alt="" \ width="42" height="42" />
-            <p>${data[1].name}</p>
-          </td>
-          <td>${data[1].current_price.toLocaleString('en-EN')}</td>
-          <td>${data[1].price_change_percentage_24h.toFixed(2)} %</td>
-          <td>$ ${data[1].market_cap.toLocaleString('en-EN')}</td>
-          </tr>
-          <tr>
-          <td>
-          <img src="${data[2].image}" alt="" \ width="42" height="42" />
-            <p>${data[2].name}</p>
-          </td>
-          <td>${data[2].current_price.toLocaleString('en-EN')}</td>
-          <td>${data[2].price_change_percentage_24h.toFixed(2)} %</td>
-          <td>$ ${data[2].market_cap.toLocaleString('en-EN')}</td>
-          </tr>
-          <tr>
-          <td>
-          <img src="${data[3].image}" alt="" \ width="42" height="42" />
-            <p>${data[3].name}</p>
-          </td>
-          <td>${data[3].current_price.toLocaleString('en-EN')}</td>
-          <td>${data[3].price_change_percentage_24h.toFixed(2)} %</td>
-          <td>$ ${data[3].market_cap.toLocaleString('en-EN')}</td>
-          </tr>
-          <tr>
-          <td>
-          <img src="${data[4].image}" alt="" \ width="42" height="42" />
-            <p>${data[4].name}</p>
-          </td>
-          <td>${data[4].current_price.toLocaleString('en-EN')}</td>
-          <td>${data[4].price_change_percentage_24h.toFixed(2)} %</td>
-          <td>$ ${data[4].market_cap.toLocaleString('en-EN')}</td>
-          </tr>
-          <tr>
-          <td>
-          <img src="${data[5].image}" alt="" \ width="42" height="42" />
-            <p>${data[5].name}</p>
-          </td>
-          <td>${data[5].current_price.toLocaleString('en-EN')}</td>
-          <td>${data[5].price_change_percentage_24h.toFixed(2)} %</td>
-          <td>$ ${data[5].market_cap.toLocaleString('en-EN')}</td>
-          </tr>
-          <tr>
-          <td>
-          <img src="${data[6].image}" alt="" \ width="42" height="42" />
-            <p>${data[6].name}</p>
-          </td>
-          <td>${data[6].current_price.toLocaleString('en-EN')}</td>
-          <td>${data[6].price_change_percentage_24h.toFixed(2)} %</td>
-          <td>$ ${data[6].market_cap.toLocaleString('en-EN')}</td>
-          </tr>
-          <tr>
-          <td>
-          <img src="${data[7].image}" alt="" \ width="42" height="42" />
-            <p>${data[7].name}</p>
-          </td>
-          <td>${data[7].current_price.toLocaleString('en-EN')}</td>
-          <td>${data[7].price_change_percentage_24h.toFixed(2)} %</td>
-          <td>$ ${data[7].market_cap.toLocaleString('en-EN')}</td>
-          </tr>
-          <tr>
-          <td>
-          <img src="${data[8].image}" alt="" \ width="42" height="42" />
-            <p>${data[8].name}</p>
-          </td>
-          <td>${data[8].current_price.toLocaleString('en-EN')}</td>
-          <td>${data[8].price_change_percentage_24h.toFixed(2)} %</td>
-          <td>$ ${data[8].market_cap.toLocaleString('en-EN')}</td>
-          </tr>
-          <tr>
-          <td>
-          <img src="${data[9].image}" alt="" \ width="42" height="42" />
-            <p>${data[9].name}</p>
-          </td>
-          <td>${data[9].current_price.toLocaleString('en-EN')}</td>
-          <td>${data[9].price_change_percentage_24h.toFixed(2)} %</td>
-          <td>$ ${data[9].market_cap.toLocaleString('en-EN')}</td>
-          </tr>
-        </table>`;
+          </thead> */}
+//           <tr>
+//             <td>
+//             <img src="${data[0].image}" alt="" \ width="42" height="42" />
+//               <p>${data[0].name}</p>
+//             </td>
+//             <td>${data[0].current_price.toLocaleString('en-EN')}</td>
+//             <td>${data[0].price_change_percentage_24h.toFixed(2)} %</td>
+//             <td>$ ${data[0].market_cap.toLocaleString('en-EN')}</td>
+//           </tr>
+//           <tr>
+//           <td>
+//           <img src="${data[1].image}" alt="" \ width="42" height="42" />
+//             <p>${data[1].name}</p>
+//           </td>
+//           <td>${data[1].current_price.toLocaleString('en-EN')}</td>
+//           <td>${data[1].price_change_percentage_24h.toFixed(2)} %</td>
+//           <td>$ ${data[1].market_cap.toLocaleString('en-EN')}</td>
+//           </tr>
+//           <tr>
+//           <td>
+//           <img src="${data[2].image}" alt="" \ width="42" height="42" />
+//             <p>${data[2].name}</p>
+//           </td>
+//           <td>${data[2].current_price.toLocaleString('en-EN')}</td>
+//           <td>${data[2].price_change_percentage_24h.toFixed(2)} %</td>
+//           <td>$ ${data[2].market_cap.toLocaleString('en-EN')}</td>
+//           </tr>
+//           <tr>
+//           <td>
+//           <img src="${data[3].image}" alt="" \ width="42" height="42" />
+//             <p>${data[3].name}</p>
+//           </td>
+//           <td>${data[3].current_price.toLocaleString('en-EN')}</td>
+//           <td>${data[3].price_change_percentage_24h.toFixed(2)} %</td>
+//           <td>$ ${data[3].market_cap.toLocaleString('en-EN')}</td>
+//           </tr>
+//           <tr>
+//           <td>
+//           <img src="${data[4].image}" alt="" \ width="42" height="42" />
+//             <p>${data[4].name}</p>
+//           </td>
+//           <td>${data[4].current_price.toLocaleString('en-EN')}</td>
+//           <td>${data[4].price_change_percentage_24h.toFixed(2)} %</td>
+//           <td>$ ${data[4].market_cap.toLocaleString('en-EN')}</td>
+//           </tr>
+//           <tr>
+//           <td>
+//           <img src="${data[5].image}" alt="" \ width="42" height="42" />
+//             <p>${data[5].name}</p>
+//           </td>
+//           <td>${data[5].current_price.toLocaleString('en-EN')}</td>
+//           <td>${data[5].price_change_percentage_24h.toFixed(2)} %</td>
+//           <td>$ ${data[5].market_cap.toLocaleString('en-EN')}</td>
+//           </tr>
+//           <tr>
+//           <td>
+//           <img src="${data[6].image}" alt="" \ width="42" height="42" />
+//             <p>${data[6].name}</p>
+//           </td>
+//           <td>${data[6].current_price.toLocaleString('en-EN')}</td>
+//           <td>${data[6].price_change_percentage_24h.toFixed(2)} %</td>
+//           <td>$ ${data[6].market_cap.toLocaleString('en-EN')}</td>
+//           </tr>
+//           <tr>
+//           <td>
+//           <img src="${data[7].image}" alt="" \ width="42" height="42" />
+//             <p>${data[7].name}</p>
+//           </td>
+//           <td>${data[7].current_price.toLocaleString('en-EN')}</td>
+//           <td>${data[7].price_change_percentage_24h.toFixed(2)} %</td>
+//           <td>$ ${data[7].market_cap.toLocaleString('en-EN')}</td>
+//           </tr>
+//           <tr>
+//           <td>
+//           <img src="${data[8].image}" alt="" \ width="42" height="42" />
+//             <p>${data[8].name}</p>
+//           </td>
+//           <td>${data[8].current_price.toLocaleString('en-EN')}</td>
+//           <td>${data[8].price_change_percentage_24h.toFixed(2)} %</td>
+//           <td>$ ${data[8].market_cap.toLocaleString('en-EN')}</td>
+//           </tr>
+//           <tr>
+//           <td>
+//           <img src="${data[9].image}" alt="" \ width="42" height="42" />
+//             <p>${data[9].name}</p>
+//           </td>
+//           <td>${data[9].current_price.toLocaleString('en-EN')}</td>
+//           <td>${data[9].price_change_percentage_24h.toFixed(2)} %</td>
+//           <td>$ ${data[9].market_cap.toLocaleString('en-EN')}</td>
+//           </tr>
+//         </table>`;
 
 MakePosNeg("td:nth-child(3)");
 MakePosNeg(".welcome_box_any_price_color");
