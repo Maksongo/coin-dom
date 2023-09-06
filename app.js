@@ -37,11 +37,11 @@ for (let i = 0; i < 4; i++) {
   </div>`
 }
 WelcomeBoxCoinsPart.innerHTML = WelcomeEmptyString;
-
+/* <tr onclick="document.location = 'coin.html';"> */
 ContentTableEmptyString = ``;
 for (let i = 0; i < 10; i++) {
   ContentTableEmptyString += `
-  <tr>
+  <tr onclick="localStorage.setItem('nextpagok', ${data[i].name})">
   <td>
   <img src="${data[i].image}" alt="" \ width="42" height="42" />
     <p>${data[i].name}</p>
