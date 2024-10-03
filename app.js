@@ -52,7 +52,7 @@ WelcomeBoxCoinsPart.innerHTML = emptyString;
               <th>Last 7 days</th>
             </tr>
           </thead>
-          <tr>
+          <tr onclick="showCoinDetails('${data[0].id}')">
             <td>
             <img src="${data[0].image}" alt="" \ width="42" height="42" />
               <p>${data[0].name}</p>
@@ -61,7 +61,7 @@ WelcomeBoxCoinsPart.innerHTML = emptyString;
             <td>${data[0].price_change_percentage_24h.toFixed(2)} %</td>
             <td>$ ${data[0].market_cap.toLocaleString('en-EN')}</td>
           </tr>
-          <tr>
+          <tr onclick="showCoinDetails('${data[1].id}')">
           <td>
           <img src="${data[1].image}" alt="" \ width="42" height="42" />
             <p>${data[1].name}</p>
@@ -70,7 +70,7 @@ WelcomeBoxCoinsPart.innerHTML = emptyString;
           <td>${data[1].price_change_percentage_24h.toFixed(2)} %</td>
           <td>$ ${data[1].market_cap.toLocaleString('en-EN')}</td>
           </tr>
-          <tr>
+          <tr onclick="showCoinDetails('${data[2].id}')">
           <td>
           <img src="${data[2].image}" alt="" \ width="42" height="42" />
             <p>${data[2].name}</p>
@@ -181,3 +181,45 @@ window.addEventListener("scroll", function () {
   let header = document.querySelector("header");
   header.classList.toggle("sticky", window.scrollY > 180);
 });
+
+
+// Создание новой страницы с информацией о монете при клике на одну из монет в таблице
+
+function showCoinDetails(coinId) {
+  // Перенаправление на страницу с URL-параметром
+  window.location.href = `coin_details.html?id=${coinId}`; 
+}
+
+
+
+async function loadCoinDetails() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const coinId = urlParams.get('id'); // Получаем ID из URL-параметра
+
+  if (coinId) {
+      try {
+          const response = await fetch(`https://api.coingecko.com/api/v3/coins/${coinId}`);
+          const data = await response.json();
+
+          const coinDetailsElement = document.getElementById('coin-details');
+          if (coinDetailsElement) {
+              coinDetailsElement.innerHTML = `
+                  <h2>${data.name}</h2>
+                  <img src="${data.image.large}" alt="${data.name}">
+                  <p>Цена: ${data.market_data.current_price.usd}</p>
+                  <p>Изменение за 24 часа: ${data.market_data.price_change_percentage_24h}%</p>
+                  <!-- Добавьте другие необходимые элементы -->
+              `;
+          } else {
+              console.error("Элемент с ID 'coin-details' не найден!");
+          }
+      } catch (error) {
+          console.error("Ошибка при получении данных:", error);
+      }
+  } else {
+      console.error("ID криптовалюты не найден в URL.");
+  }
+}
+
+// Запустите функцию loadCoinDetails после загрузки DOM
+document.addEventListener('DOMContentLoaded', loadCoinDetails);
