@@ -57,9 +57,24 @@
 
   <div class="wrapper">
 
-    <div id="coin-details">
-        <!-- Здесь будет отображаться информация о выбранной монете -->
+    <div class="coin-content" id="coin-details">
+      <div class="coin-content__img">
+        <img src="${data.image.large}" alt="${data.name}">
+        <p>name</p>
+        <p>rank</p>
+      </div>
+      <div class="coin-content__text">
+        <div class="coin-content__text__numb">
+          <p>24h Change:</p>
+          <p>Price:</p>
+          <p>Symbol:</p>
+        </div>
+        <div class="coin-content__text_disc">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, temporibus.</p>
+        </div>
+      </div>
     </div>
+
   </div>
     <script src="app.js"></script>
 </body>

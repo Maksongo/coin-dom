@@ -204,12 +204,21 @@ async function loadCoinDetails() {
           const coinDetailsElement = document.getElementById('coin-details');
           if (coinDetailsElement) {
               coinDetailsElement.innerHTML = `
-                  <h2>${data.name}</h2>
-                  <img src="${data.image.large}" alt="${data.name}">
-                  <p>Цена: ${data.market_data.current_price.usd}</p>
-                  <p>Изменение за 24 часа: ${data.market_data.price_change_percentage_24h}%</p>
-                  <!-- Добавьте другие необходимые элементы -->
-              `;
+      <div class="coin-content__img">
+        <img src="${data.image.small}" alt="${data.name}">
+        <p>${data.name}</p>
+        <p>Rank: ${data.market_cap_rank}</p>
+      </div>
+      <div class="coin-content__text">
+        <div class="coin-content__text__numb">
+          <p>24h Change: ${data.market_data.price_change_percentage_24h.toFixed(2)} %</p>
+          <p>Price: ${data.market_data.current_price.usd}</p>
+          <p>Symbol: ${data.symbol}</p>
+        </div>
+        <div class="coin-content__text_disc">
+          <p>${data.description.en}</p>
+        </div>
+      </div>`;
           } else {
               console.error("Элемент с ID 'coin-details' не найден!");
           }
@@ -223,3 +232,4 @@ async function loadCoinDetails() {
 
 // Запустите функцию loadCoinDetails после загрузки DOM
 document.addEventListener('DOMContentLoaded', loadCoinDetails);
+

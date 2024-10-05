@@ -617,3 +617,18 @@ display: inline-block;
     margin: 0 15 0 0;
   }
 }
+
+
+/* Coin page */
+
+.coin-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.coin-content__text__numb{
+  display: flex;
+justify-content: space-between
+}
