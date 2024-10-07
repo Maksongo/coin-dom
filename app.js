@@ -203,22 +203,30 @@ async function loadCoinDetails() {
 
           const coinDetailsElement = document.getElementById('coin-details');
           if (coinDetailsElement) {
-              coinDetailsElement.innerHTML = `
-      <div class="coin-content__img">
-        <img src="${data.image.small}" alt="${data.name}">
-        <p>${data.name}</p>
-        <p>Rank: ${data.market_cap_rank}</p>
-      </div>
-      <div class="coin-content__text">
-        <div class="coin-content__text__numb">
-          <p>24h Change: ${data.market_data.price_change_percentage_24h.toFixed(2)} %</p>
-          <p>Price: ${data.market_data.current_price.usd}</p>
-          <p>Symbol: ${data.symbol}</p>
+              coinDetailsElement.innerHTML = `      
+          <div class="coinpage_coinbox">
+      <div class="coinpage_imageAndInfo">
+      <img class="coinpage_image" src="${data.image.large}" alt="${data.name}">
+      <h1>${data.name}</h1>
+      <p>Rank: #${data.market_cap_rank}</p> 
+    </div>
+      <div class="coinpage_textpart">
+        <div class="coinpage_textpart_toppart">
+          <div class="coinpage_textpart_toppart_24h">
+            <p>24h Change: ${data.market_data.price_change_percentage_24h.toFixed(2)}</p>
+          </div>
+          <div class="coinpage_textpart_toppart_price">
+            <p>Price: ${data.market_data.current_price.usd}</p>
+          </div>
+          <div class="coinpage_textpart_toppart_symbol">
+            <p>Symbol: ${data.symbol}</p>
+          </div>
         </div>
-        <div class="coin-content__text_disc">
+        <div class="coinpage_textpart_bottompart">
           <p>${data.description.en}</p>
         </div>
-      </div>`;
+      </div>
+    </div>`;
           } else {
               console.error("Элемент с ID 'coin-details' не найден!");
           }
