@@ -104,7 +104,7 @@ function MakePosNeg(arg) {
 
 window.addEventListener("scroll", function () {
   let header = document.querySelector("header");
-  header.classList.toggle("sticky", window.scrollY > 180);
+  header.classList.toggle("sticky", window.scrollY > 50);
 });
 
 
@@ -153,6 +153,8 @@ async function loadCoinDetails() {
       </div>
     </div>`;
     MakePosNeg("span");
+    let header = document.querySelector("header");
+    // header.style.position = "static";
           } else {
               console.error("Элемент с ID 'coin-details' не найден!");
           }
