@@ -105,6 +105,7 @@ header {
 header.sticky {
   background-color: #0f051d;
   z-index: 9999;
+  box-shadow: 0 10px 5px 0 rgba(0, 0, 0, .16);
 }
 
 nav {
@@ -455,7 +456,7 @@ color: rgb(218, 218, 218);
 
 .join_us_box {
   margin-top: 140px;
-  margin-bottom: 150px;
+  margin-bottom: 60px;
 }
 
 .join_us_textpart_one,
@@ -662,6 +663,9 @@ justify-content: space-between
     display: flex;
     justify-content: space-between;
     font-size: 1.2em;
+    flex-wrap: wrap;
+    gap: 10px;
+    text-align: center;
   }
   .coinpage_textpart_bottompart{
     margin-top: 40px;
@@ -669,4 +673,26 @@ justify-content: space-between
     height: 290px;
     font-size: 1.1em;
     letter-spacing: 0.05em;
+  }
+
+/* адаптив coin page */
+
+  @media screen and (max-width: 1050px) {
+    .coinpage_coinbox {
+      flex-direction: column;
+
+    }
+    .coinpage_imageAndInfo{
+      border-right: 0px solid white;
+      padding-right: 0px;
+      margin-right: 0px;
+    }
+    .coinpage_textpart{
+      border-top: 1px solid white;
+      padding-top: 20px;
+      margin-top: 20px;
+    }
+    .coinpage_textpart_toppart{
+      justify-content: center;
+    }
   }
