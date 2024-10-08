@@ -165,4 +165,3 @@ async function loadCoinDetails() {
 
 // Запустите функцию loadCoinDetails после загрузки DOM
 document.addEventListener('DOMContentLoaded', loadCoinDetails);
-
