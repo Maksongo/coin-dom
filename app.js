@@ -198,7 +198,7 @@ const addScrollListener = (buttons, position) => {
 
       if (!isOnMainPage) {
         // Перенаправляем на главную с параметром позиции
-        window.location.href = `/?scrollTo=${position}`;
+        window.location.href = `coin-dom/?scrollTo=${position}`;
       } else {
         // Если уже на главной странице, выполняем скролл
         scrollToPosition(position);
