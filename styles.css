@@ -680,7 +680,7 @@ justify-content: space-between
   @media screen and (max-width: 1050px) {
     .coinpage_coinbox {
       flex-direction: column;
-
+      margin: 0 20px auto;
     }
     .coinpage_imageAndInfo{
       border-right: 0px solid white;
@@ -695,4 +695,5 @@ justify-content: space-between
     .coinpage_textpart_toppart{
       justify-content: center;
     }
+    
   }

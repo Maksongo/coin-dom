@@ -138,10 +138,10 @@ async function loadCoinDetails() {
       <div class="coinpage_textpart">
         <div class="coinpage_textpart_toppart">
           <div class="coinpage_textpart_toppart_24h">
-            <p>24h Change: ${data.market_data.price_change_percentage_24h.toFixed(2)}</p>
+            <p>24h Change: <span>${data.market_data.price_change_percentage_24h.toFixed(2)}%</span></p>
           </div>
           <div class="coinpage_textpart_toppart_price">
-            <p>Price: ${data.market_data.current_price.usd}</p>
+            <p>Price: <span>${data.market_data.current_price.usd.toLocaleString('en-EN')}</span></p>
           </div>
           <div class="coinpage_textpart_toppart_symbol">
             <p>Symbol: ${data.symbol}</p>
@@ -152,6 +152,7 @@ async function loadCoinDetails() {
         </div>
       </div>
     </div>`;
+    MakePosNeg("span");
           } else {
               console.error("Элемент с ID 'coin-details' не найден!");
           }
@@ -229,6 +230,14 @@ window.onload = () => {
   const scrollTo = urlParams.get("scrollTo");
 
   if (scrollTo) {
+    // Прокручиваем страницу до нужной позиции
     scrollToPosition(parseInt(scrollTo, 10));
+
+    // Убираем параметр scrollTo из URL
+    urlParams.delete("scrollTo"); // Удаляем параметр из объекта URLSearchParams
+
+    // Обновляем URL без перезагрузки страницы
+    const newUrl = window.location.pathname + (urlParams.toString() ? "?" + urlParams.toString() : "");
+    history.replaceState(null, "", newUrl); // Заменяем URL в браузере без перезагрузки
   }
 };
