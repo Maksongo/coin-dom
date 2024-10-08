@@ -165,3 +165,70 @@ async function loadCoinDetails() {
 
 // Запустите функцию loadCoinDetails после загрузки DOM
 document.addEventListener('DOMContentLoaded', loadCoinDetails);
+
+
+const buttonsConfig = [
+  { selector: "#HomeNavButtonID", position: 0 },
+  { selector: "#MarketNavButtonID", position: 900 },
+  { selector: "#ChooseUsNavButtonID", position: 2200 },
+  { selector: "#JoinNavButtonID", position: 4300 },
+];
+
+const MobileVersionBox = document.querySelector("#mobile_version_boxID");
+const mobileVersionButton = document.querySelector("#mobile_version_button");
+const mobileVersionCloseButton = document.querySelector("#moblie_verison_closebuttonID");
+
+// Функция для прокрутки
+const scrollToPosition = (position) => {
+  window.scrollTo({
+    top: position,
+    behavior: "smooth",
+  });
+  MobileVersionBox.style.transform = "translateX(-100%)";
+};
+
+// Функция для обработки нажатий кнопок навигации
+const addScrollListener = (buttons, position) => {
+  buttons.forEach((button, i) => {
+    button.addEventListener("click", (e) => {
+      e.preventDefault();
+      const currentPath = window.location.pathname;
+      const isOnMainPage = currentPath === "/"; // Проверяем, на главной ли странице
+
+      if (!isOnMainPage) {
+        // Перенаправляем на главную с параметром позиции
+        window.location.href = `/?scrollTo=${position}`;
+      } else {
+        // Если уже на главной странице, выполняем скролл
+        scrollToPosition(position);
+      }
+    });
+  });
+};
+
+// Инициализация кнопок навигации
+buttonsConfig.forEach(({ selector, position }) => {
+  const buttons = document.querySelectorAll(selector);
+  addScrollListener(buttons, position);
+});
+
+// Обработчик для открытия мобильного меню
+mobileVersionButton.onclick = () => {
+  MobileVersionBox.style.display = "block";
+  MobileVersionBox.style.transform = "translateX(0%)";
+};
+
+// Обработчик для закрытия мобильного меню
+mobileVersionCloseButton.addEventListener("click", () => {
+  MobileVersionBox.style.transform = "translateX(-100%)";
+});
+
+// Проверка параметра scrollTo при загрузке главной страницы
+window.onload = () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const scrollTo = urlParams.get("scrollTo");
+
+  if (scrollTo) {
+    scrollToPosition(parseInt(scrollTo, 10));
+  }
+};
