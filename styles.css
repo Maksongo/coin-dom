@@ -337,6 +337,9 @@ tr:hover {
 th:nth-child(1) {
   width: 420px;
 }
+th:nth-child(3) {
+  width: 282px;
+}
 
 th:nth-child(4) {
   width: 300px;
@@ -381,6 +384,7 @@ td:nth-child(4) {
 
 .market_box {
   overflow: auto;
+  /* margin: 0px 25px; */
 }
 
 .choose_us_box h1 {
@@ -614,9 +618,9 @@ display: inline-block;
   width: 80%;
   }
   .welcome_box{
-    height: auto; /* Убираем фиксированную высоту */
-    min-height: 105vh; /* Минимальная высота экрана */
-    padding: 20px; /* Дополнительно можно добавить отступы */
+    height: auto;
+    min-height: 100vh;
+    top: 100%;
   }
 }
 
@@ -708,9 +712,21 @@ justify-content: space-between
 
   @media screen and (max-height: 1000px) and (max-width: 1050px) {
     .coinpage_coinbox {
-      height: auto; /* Автоматическая высота, чтобы избежать наложения */
-      min-height: 300px; /* Задайте минимальную высоту, чтобы контент не был слишком маленьким */
-      padding-top: 40px; /* Добавляем отступ для хедера */
+      height: auto;
+      min-height: 300px;
+      padding-top: 40px;
       margin-bottom: 40px;
+    }
+  }
+
+
+  @media only screen and (max-width: 1225px) { /* Учитываем ширину таблицы плюс отступы */
+    .content-table {
+      width: calc(100% - 40px); /* Ширина таблицы с отступами по бокам */
+      max-width: 1200px; /* Максимальная ширина остается 1200px */
+      margin: 25px 20px; /* Отступы по бокам */
+    }
+    .market_box_title{
+      margin: 0 20px;
     }
   }

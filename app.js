@@ -17,7 +17,6 @@ let getBitcoinPrice = async () => {
   );
 
   const data = await response.json();
-  console.log(data);
   return data;
 };
 
@@ -170,40 +169,56 @@ async function loadCoinDetails() {
 document.addEventListener('DOMContentLoaded', loadCoinDetails);
 
 
-const buttonsConfig = [
-  { selector: "#HomeNavButtonID", position: 0 },
-  { selector: "#MarketNavButtonID", position: 900 },
-  { selector: "#ChooseUsNavButtonID", position: 2200 },
-  { selector: "#JoinNavButtonID", position: 4300 },
-];
-const MobileVersionBox = document.querySelector("#mobile_version_boxID");
-const mobileVersionButton = document.querySelector("#mobile_version_button");
-const mobileVersionCloseButton = document.querySelector("#moblie_verison_closebuttonID");
-// Функция для обработки нажатий кнопок навигации
-const addScrollListener = (buttons, position) => {
-  buttons.forEach((button, i) => {
-    button.addEventListener("click", (e) => {
-      e.preventDefault();
-      console.log(i, "you clicked me");
-      window.scrollTo({
-        top: position,
-        behavior: "smooth",
-      });
+document.addEventListener("DOMContentLoaded", () => {
+  const headerHeight = 63; // Высота хедера
+  const MobileVersionBox = document.querySelector("#mobile_version_boxID");
+  const mobileVersionButton = document.querySelector("#mobile_version_button");
+  const mobileVersionCloseButton = document.querySelector("#moblie_verison_closebuttonID");
+
+  const buttonsConfig = [
+    { selector: "#HomeNavButtonID", target: "#HomeSectionID" },
+    { selector: "#MarketNavButtonID", target: "#MarketSectionID" },
+    { selector: "#ChooseUsNavButtonID", target: "#ChooseUsSectionID" },
+    { selector: "#JoinNavButtonID", target: "#JoinSectionID" }
+  ];
+
+  // Обработчик для открытия мобильного меню
+  if (mobileVersionButton) {
+    mobileVersionButton.onclick = () => {
+      MobileVersionBox.style.display = "block";
+      MobileVersionBox.style.transform = "translateX(0%)";
+    };
+  }
+
+  // Обработчик для закрытия мобильного меню
+  if (mobileVersionCloseButton) {
+    mobileVersionCloseButton.addEventListener("click", () => {
       MobileVersionBox.style.transform = "translateX(-100%)";
     });
+  }
+
+  // Функция для обработки нажатий кнопок навигации
+  buttonsConfig.forEach(({ selector, target }) => {
+    document.querySelectorAll(selector).forEach(button => {
+      button.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        // Находим целевую секцию
+        const targetElement = document.querySelector(target);
+        if (targetElement) {
+          // Получаем позицию секции и учитываем высоту хедера
+          const targetPosition = targetElement.offsetTop - headerHeight;
+
+          // Прокручиваем страницу с плавной анимацией
+          window.scrollTo({
+            top: targetPosition,
+            behavior: "smooth"
+          });
+
+          // Закрываем мобильное меню (если оно открыто)
+          MobileVersionBox.style.transform = "translateX(-100%)";
+        }
+      });
+    });
   });
-};
-// Инициализация кнопок навигации
-buttonsConfig.forEach(({ selector, position }) => {
-  const buttons = document.querySelectorAll(selector);
-  addScrollListener(buttons, position);
-});
-// Обработчик для открытия мобильного меню
-mobileVersionButton.onclick = () => {
-  MobileVersionBox.style.display = "block";
-  MobileVersionBox.style.transform = "translateX(0%)";
-};
-// Обработчик для закрытия мобильного меню
-mobileVersionCloseButton.addEventListener("click", () => {
-  MobileVersionBox.style.transform = "translateX(-100%)";
 });
