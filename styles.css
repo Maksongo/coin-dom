@@ -613,12 +613,20 @@ display: inline-block;
   font-size: 1.2em;
   width: 80%;
   }
+  .welcome_box{
+    height: auto; /* Убираем фиксированную высоту */
+    min-height: 105vh; /* Минимальная высота экрана */
+    padding: 20px; /* Дополнительно можно добавить отступы */
+  }
 }
 
 
 @media screen and (max-width: 460px) {
   .any_choose_box i {
     margin: 0 15 0 0;
+  }
+  .welcome_box h1 {
+    font-size: 50px;
   }
 }
 
@@ -703,5 +711,6 @@ justify-content: space-between
       height: auto; /* Автоматическая высота, чтобы избежать наложения */
       min-height: 300px; /* Задайте минимальную высоту, чтобы контент не был слишком маленьким */
       padding-top: 40px; /* Добавляем отступ для хедера */
+      margin-bottom: 40px;
     }
   }
