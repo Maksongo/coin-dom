@@ -224,5 +224,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function goBack() {
-  window.history.back();
+  const currentDomain = window.location.origin; // Получает текущий домен
+  window.location.href = currentDomain; // Перенаправление на главную страницу текущего домена  
 }
