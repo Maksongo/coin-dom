@@ -224,13 +224,13 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function goBack() {
-  const currentDomain = window.location.origin; // Получаем текущий домен
+  const currentUrl = window.location.href; // Получаем текущий полный URL
   
-  if (currentDomain.includes("maksongo.github.io")) {
-    // Если домен содержит "github.io", перенаправляем на maksongo.github.io
+  if (currentUrl.includes("maksongo.github.io")) {
+    // Если URL содержит "github.io", перенаправляем на maksongo.github.io/coin-dom
     window.location.href = "https://maksongo.github.io/coin-dom";
   } else {
     // Иначе перенаправляем на главную страницу текущего домена
-    window.location.href = currentDomain;
+    window.location.href = window.location.origin;
   }
 }
