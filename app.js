@@ -226,7 +226,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function goBack() {
   const currentDomain = window.location.origin; // Получаем текущий домен
   
-  if (currentDomain.includes("github.io")) {
+  if (currentDomain.includes("maksongo.github.io")) {
     // Если домен содержит "github.io", перенаправляем на maksongo.github.io
     window.location.href = "https://maksongo.github.io/coin-dom";
   } else {
