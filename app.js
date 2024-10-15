@@ -225,9 +225,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function goBack() {
   const currentUrl = window.location.href; // Получаем текущий полный URL
-  
-  if (currentUrl.includes("maksongo.github.io")) {
-    // Если URL содержит "github.io", перенаправляем на maksongo.github.io/coin-dom
+  const currentPath = window.location.pathname; // Получаем путь после домена
+
+  if (currentUrl.includes("maksongo.github.io") && currentPath.startsWith("/coin-dom")) {
+    // Если URL содержит "github.io" и находится в поддиректории "coin-dom", перенаправляем на корень "coin-dom"
     window.location.href = "https://maksongo.github.io/coin-dom";
   } else {
     // Иначе перенаправляем на главную страницу текущего домена
