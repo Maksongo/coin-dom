@@ -228,7 +228,7 @@ function goBack() {
   
   if (currentDomain.includes("github.io")) {
     // Если домен содержит "github.io", перенаправляем на maksongo.github.io
-    window.location.href = "https://maksongo.github.io";
+    window.location.href = "https://maksongo.github.io/coin-dom";
   } else {
     // Иначе перенаправляем на главную страницу текущего домена
     window.location.href = currentDomain;
